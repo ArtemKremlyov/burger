@@ -11,6 +11,9 @@
 @import url("blocks");
 @import url("blocks");
 @import url("blocks");
+li{
+  list-style: none;
+}
 .header {
   margin-bottom: 20px; }
 
@@ -89,7 +92,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 100px; }
+  position: fixed;
+  top: 95px;
+  right: 210px;}
 
 .content {
   display: flex;
@@ -104,6 +109,13 @@
   border-radius: 50%;
   background: white;
   margin-bottom: 16px; }
+.navigation__elem:hover:after{
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: solid 1px #ffffff;
+  border-radius: 50%;
+  position: absolute; }
 
 .navigation__elem-activ::after {
   content: '';
@@ -279,6 +291,6 @@
 
 .section__reviews-img__column:hover .reviews {
   opacity: 1;
-  transition: 0.5s; }
+  transition: 0.8s; }
 
 /*# sourceMappingURL=main.css.map */
