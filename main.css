@@ -1,0 +1,284 @@
+@charset "UTF-8";
+@import url("layout/normalize.css");
+@import url("layout/fonts.css");
+@import url("layout/base.css");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+@import url("blocks");
+.header {
+  margin-bottom: 20px; }
+
+.main__section {
+  background: url("img/burger-bck.png") no-repeat center center;
+  background-size: cover;
+  /*  height: 650px; */ }
+
+.aside__list {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-transform: uppercase; }
+
+.aside__list-item {
+  margin-right: 14px; }
+  .aside__list-item:before {
+    content: '•';
+    margin-right: 15px;
+    color: white; }
+  .aside__list-item:last-child:before {
+    content: ''; }
+  .aside__list-item:nth-child(1):before {
+    content: '';
+    color: black;
+    margin-right: 0; }
+
+.aside {
+  display: flex;
+  margin-left: 49px; }
+
+.header-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e45028; }
+
+.main__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: start; }
+
+.main__section-top__columns {
+  font-family: 'Gagalin';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 72px;
+  color: #f9b43b;
+  padding-top: 30px; }
+
+.main__section-bottom__columns {
+  font-family: 'Lifehack';
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  font-size: 65px;
+  line-height: 0.92; }
+
+.main__section-right__columns {
+  margin-left: 11px;
+  max-width: 406px;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 100px; }
+
+.content {
+  display: flex;
+  height: 100%; }
+
+.navigation__elem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+  margin-bottom: 16px; }
+
+.navigation__elem-activ::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border: solid 1px #ffffff;
+  border-radius: 50%;
+  position: absolute; }
+
+.conainer__main {
+  display: flex;
+  flex-direction: column; }
+
+.best__headline {
+  font-family: 'Gagalin';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 72px;
+  color: #2f3234;
+  text-align: center;
+  margin-bottom: 55px; }
+
+.best__content {
+  padding-top: 135px; }
+
+.best__img {
+  margin-bottom: 33px; }
+
+.section__best {
+  background: url("img/best-bck.png") no-repeat center center;
+  background-size: cover; }
+
+.best__info-elem__headline {
+  font-family: 'Lifehack';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  color: #2f3234;
+  margin-bottom: 25px; }
+
+.best__info-elem__text {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  font-style: normal;
+  color: rgba(47, 50, 52, 0.8);
+  font-size: 14px;
+  line-height: 1.71; }
+
+.best__info {
+  display: flex;
+  justify-content: center; }
+
+.best__info-elem {
+  width: 284px;
+  margin-right: 36px;
+  text-align: center; }
+
+.reviews__container {
+  display: flex;
+  flex-wrap: wrap; }
+
+.section__reviews-img__column {
+  height: 50vh;
+  width: 25vh; }
+
+.arrow-scroll__flex {
+  position: absolute;
+  top: 92%;
+  left: 50%; }
+
+.section__reviews-content {
+  display: flex;
+  flex-wrap: wrap; }
+
+.section_reviews-tcolumn {
+  display: flex; }
+
+.section__reviews-bcolumn {
+  display: flex; }
+
+.reviews__ava-one {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-one.png") no-repeat center center;
+  background-size: cover; }
+  .reviews__ava-one:hover {
+    background-color: rgba(0, 0, 0, 0.5); }
+
+.reviews__ava-two {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-two.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-three {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-three.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-four {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-four.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-five {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-five.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-six {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-six.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-seven {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-seven.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__ava-eight {
+  height: 50vh;
+  width: 30vh;
+  background: url("img/reviews__ava-eight.png") no-repeat center center;
+  background-size: cover; }
+
+.reviews__headline {
+  font-family: 'Gagalin';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 72px;
+  font-size: 14px;
+  text-align: left;
+  color: white;
+  padding-bottom: 30px; }
+
+.reviews__text {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+  line-height: 1.71;
+  padding-bottom: 12px; }
+
+.reviews__btn {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 13px;
+  color: white;
+  text-align: center;
+  width: 110px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #2f3234; }
+
+.reviews {
+  height: 281px;
+  width: 276px;
+  padding-left: 20px;
+  padding-top: 50px;
+  padding-right: 33px;
+  opacity: 0; }
+
+.section__reviews-img__column:hover .reviews {
+  opacity: 1;
+  transition: 0.5s; }
+
+/*# sourceMappingURL=main.css.map */
