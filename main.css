@@ -11,18 +11,16 @@
 @import url("blocks");
 @import url("blocks");
 @import url("blocks");
-li{
-  list-style: none;
-}
 .header {
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  padding-top: 13px; }
 
 .main__section {
   background: url("img/burger-bck.png") no-repeat center center;
   background-size: cover;
   /*  height: 650px; */ }
 
-.aside__list {
+.nav__list {
   font-family: 'Ubuntu';
   font-weight: 500;
   font-style: normal;
@@ -32,20 +30,18 @@ li{
   list-style: none;
   text-transform: uppercase; }
 
-.aside__list-item {
+.nav__list-item {
   margin-right: 14px; }
-  .aside__list-item:before {
+  .nav__list-item:before {
     content: '•';
     margin-right: 15px;
     color: white; }
-  .aside__list-item:last-child:before {
-    content: ''; }
-  .aside__list-item:nth-child(1):before {
+  .nav__list-item:nth-child(1):before {
     content: '';
     color: black;
     margin-right: 0; }
 
-.aside {
+.nav {
   display: flex;
   margin-left: 49px; }
 
@@ -91,10 +87,10 @@ li{
 .navigation {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   position: fixed;
-  top: 95px;
-  right: 210px;}
+  right: 50px;
+  top: 93px;
+  list-style: none; }
 
 .content {
   display: flex;
@@ -109,13 +105,17 @@ li{
   border-radius: 50%;
   background: white;
   margin-bottom: 16px; }
-.navigation__elem:hover:after{
-  content: '';
-  width: 16px;
-  height: 16px;
-  border: solid 1px #ffffff;
-  border-radius: 50%;
-  position: absolute; }
+  .navigation__elem:hover::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: solid 1px #ffffff;
+    border-radius: 50%;
+    position: absolute; }
+
+.burger__container {
+  display: flex;
+  justify-content: space-between; }
 
 .navigation__elem-activ::after {
   content: '';
@@ -166,6 +166,7 @@ li{
 
 .best__info {
   display: flex;
+  list-style: none;
   justify-content: center; }
 
 .best__info-elem {
@@ -179,12 +180,23 @@ li{
 
 .section__reviews-img__column {
   height: 50vh;
-  width: 25vh; }
+  width: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+  .section__reviews-img__column:hover::after {
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); }
 
 .arrow-scroll__flex {
-  position: absolute;
-  top: 92%;
-  left: 50%; }
+  display: flex;
+  justify-content: center;
+  padding-bottom: 40px; }
 
 .section__reviews-content {
   display: flex;
@@ -282,8 +294,8 @@ li{
   background-color: #2f3234; }
 
 .reviews {
-  height: 281px;
-  width: 276px;
+  height: 100%;
+  width: 100%;
   padding-left: 20px;
   padding-top: 50px;
   padding-right: 33px;
@@ -291,6 +303,14 @@ li{
 
 .section__reviews-img__column:hover .reviews {
   opacity: 1;
-  transition: 0.8s; }
+  transition: 0.5s; }
+
+.section {
+  display: flex;
+  height: 100vh; }
+
+.best__container {
+  display: flex;
+  align-items: center; }
 
 /*# sourceMappingURL=main.css.map */

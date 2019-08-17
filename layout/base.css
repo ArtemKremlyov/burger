@@ -9,11 +9,12 @@ a{
  color: white;
 }
 .container{
-height: 100vh;
+height: 100%;
 width: 1105px;
 margin: 0 auto;
 }
 .header__container{
     height: 69px;
     display: flex;
+    align-items: center;
 }
