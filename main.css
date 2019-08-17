@@ -53,6 +53,8 @@
   height: 35px;
   border-radius: 5px;
   background-color: #e45028; }
+  .header-btn:hover {
+    background-color: #f9b43b; }
 
 .main__container {
   display: flex;
@@ -178,20 +180,12 @@
   display: flex;
   flex-wrap: wrap; }
 
-.section__reviews-img__column {
+.section__reviews-img {
   height: 50vh;
   width: 25%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
-  .section__reviews-img__column:hover::after {
-    content: '';
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5); }
 
 .arrow-scroll__flex {
   display: flex;
@@ -200,63 +194,9 @@
 
 .section__reviews-content {
   display: flex;
-  flex-wrap: wrap; }
-
-.section_reviews-tcolumn {
-  display: flex; }
-
-.section__reviews-bcolumn {
-  display: flex; }
-
-.reviews__ava-one {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-one.png") no-repeat center center;
-  background-size: cover; }
-  .reviews__ava-one:hover {
-    background-color: rgba(0, 0, 0, 0.5); }
-
-.reviews__ava-two {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-two.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-three {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-three.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-four {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-four.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-five {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-five.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-six {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-six.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-seven {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-seven.png") no-repeat center center;
-  background-size: cover; }
-
-.reviews__ava-eight {
-  height: 50vh;
-  width: 30vh;
-  background: url("img/reviews__ava-eight.png") no-repeat center center;
-  background-size: cover; }
+  flex-wrap: wrap;
+  list-style: none;
+  filter: grayscale(1); }
 
 .reviews__headline {
   font-family: 'Gagalin';
@@ -292,6 +232,8 @@
   height: 35px;
   border-radius: 5px;
   background-color: #2f3234; }
+  .reviews__btn:hover {
+    background-color: lightslategrey; }
 
 .reviews {
   height: 100%;
@@ -301,9 +243,10 @@
   padding-right: 33px;
   opacity: 0; }
 
-.section__reviews-img__column:hover .reviews {
+.section__reviews-img:hover .reviews {
   opacity: 1;
-  transition: 0.5s; }
+  transition: 0.5s;
+  background-color: rgba(20, 20, 20, 0.7); }
 
 .section {
   display: flex;
@@ -311,6 +254,7 @@
 
 .best__container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  justify-content: center; }
 
 /*# sourceMappingURL=main.css.map */
