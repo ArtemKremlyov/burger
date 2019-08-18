@@ -17,7 +17,6 @@
 
 .main__section {
   background: url("img/burger-bck.png") no-repeat center center;
-  background-size: cover;
   /*  height: 650px; */ }
 
 .nav__list {
@@ -46,23 +45,30 @@
   margin-left: 49px; }
 
 .header-btn {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 13px;
   width: 97px;
   height: 35px;
   border-radius: 5px;
-  background-color: #e45028; }
+  background-color: #e45028;
+  text-transform: uppercase; }
   .header-btn:hover {
-    background-color: #f9b43b; }
+    background-color: #f9b43b;
+    transition: 0.3s; }
 
-.main__container {
+.main {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: start; }
+  justify-content: start;
+  height: 71%; }
 
-.main__section-top__columns {
+.main__tagline-headline {
   font-family: 'Gagalin';
   font-weight: normal;
   font-style: normal;
@@ -70,7 +76,7 @@
   color: #f9b43b;
   padding-top: 30px; }
 
-.main__section-bottom__columns {
+.main__tagline-text {
   font-family: 'Lifehack';
   font-weight: 500;
   font-style: normal;
@@ -78,15 +84,16 @@
   font-size: 65px;
   line-height: 0.92; }
 
-.main__section-right__columns {
-  margin-left: 11px;
+.main__tagline {
+  margin-left: 15px;
   max-width: 406px;
   min-height: 330px;
   display: flex;
   flex-direction: column;
-  justify-content: center; }
+  justify-content: center;
+  padding-top: 50px; }
 
-.navigation {
+.aside__list {
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -98,7 +105,7 @@
   display: flex;
   height: 100%; }
 
-.navigation__elem {
+.aside__elem {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -107,7 +114,7 @@
   border-radius: 50%;
   background: white;
   margin-bottom: 16px; }
-  .navigation__elem:hover::after {
+  .aside__elem:hover::after {
     content: '';
     width: 16px;
     height: 16px;
@@ -119,7 +126,7 @@
   display: flex;
   justify-content: space-between; }
 
-.navigation__elem-activ::after {
+.aside__elem-activ::after {
   content: '';
   width: 16px;
   height: 16px;
@@ -147,10 +154,9 @@
   margin-bottom: 33px; }
 
 .section__best {
-  background: url("img/best-bck.png") no-repeat center center;
-  background-size: cover; }
+  background: url("img/best-bck.png") no-repeat center center; }
 
-.best__info-elem__headline {
+.best__info-headline {
   font-family: 'Lifehack';
   font-weight: 500;
   font-style: normal;
@@ -158,7 +164,7 @@
   color: #2f3234;
   margin-bottom: 25px; }
 
-.best__info-elem__text {
+.best__info-text {
   font-family: 'Ubuntu';
   font-weight: 300;
   font-style: normal;
@@ -187,10 +193,18 @@
   background-size: cover;
   background-position: center center; }
 
-.arrow-scroll__flex {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 40px; }
+.arrow-scroll__absolute {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 0); }
+
+.arrow-scroll {
+  background-image: url("img/arrow-scroll.svg");
+  width: 29px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .section__reviews-content {
   display: flex;
@@ -233,7 +247,8 @@
   border-radius: 5px;
   background-color: #2f3234; }
   .reviews__btn:hover {
-    background-color: lightslategrey; }
+    background-color: lightslategrey;
+    transition: 0.3s; }
 
 .reviews {
   height: 100%;
@@ -250,7 +265,8 @@
 
 .section {
   display: flex;
-  height: 100vh; }
+  height: 100vh;
+  background-size: cover; }
 
 .best__container {
   display: flex;
