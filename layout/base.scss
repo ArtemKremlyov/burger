@@ -1,0 +1,46 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+    
+    a{
+     text-decoration: none;
+     color: white;
+    }
+    .container{
+    height: 100%;
+    width: 1105px;
+    margin: 0 auto;
+    }
+    .header--container{
+        height: 69px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .wrapper{
+       width:100vw;
+    }
+    
+    body{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    .headline{
+        @include Gagalin();
+ 
+      &--color{
+        &--black{
+            color: $black;
+        }
+        &--orange{
+            color: $orange;
+        }
+      }
+      &--best{
+          margin-bottom: 55px;
+          text-align: center;
+      }
+    }
+    

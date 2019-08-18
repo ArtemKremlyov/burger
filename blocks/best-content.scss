@@ -1,0 +1,37 @@
+.best__headline{
+    @include Gagalin();
+    color: $black;
+    text-align: center;
+    margin-bottom: 55px;
+}
+.best__content{
+    padding-top: 135px;
+}
+.best__img{
+    margin-bottom: 33px;
+}
+.section--best{
+    background: url('img/best-bck.png') no-repeat center center;
+}
+.best__info-headline{
+    @include Lifehack();
+    font-size: 24px;
+    color: $black;
+    margin-bottom: 25px;
+}
+.best__info-text{
+    @include Ubuntu300();
+    color: rgba(47, 50, 52, 0.8);
+    font-size: 14px;
+    line-height: 1.71;
+}
+.best__info{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.best__info-elem{
+    width: 284px;
+    margin-right: 36px;
+    text-align: center;
+}

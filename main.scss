@@ -1,301 +1,61 @@
-@import url('layout/normalize.css');
-@import url('layout/fonts.css');
-@import url('layout/base.css');
-
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-@import url('blocks');
-
+//colors
+@import "layout/mixins.scss";
 $orange:#f9b43b;
 $ginger: #e45028;
 $black:#2f3234;
 
-@mixin Ubuntu500 {
-    font-family: 'Ubuntu';
-    font-weight: 500;
-    font-style: normal;
-}
-@mixin UbuntuNormal {
-    font-family: 'Ubuntu';
-    font-weight: normal;
-    font-style: normal;
-}
-@mixin Ubuntu300{
-    font-family: 'Ubuntu';
-    font-weight: 300;
-    font-style: normal;
-}
-@mixin UbuntuBold{
-    font-family: 'Ubuntu';
-    font-weight: bold;
-    font-style: normal;
-}
-@mixin Gagalin{
-    font-family: 'Gagalin';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 72px;
-}
-@mixin Lifehack{
-    font-family: 'Lifehack';
-    font-weight: 500;
-    font-style: normal;
-}
-@mixin flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.header{
-    margin-bottom: 20px;
-    padding-top:13px;
-}
-.main__section{
+//
+
+
+//layout
+
+@import "layout/normalize.scss";
+@import "layout/fonts.scss";
+@import "layout/base.scss";
+
+//
+
+
+//blocks
+
+@import "blocks/header.scss";
+@import "blocks/aside.scss";
+@import "blocks/block-main.scss";
+@import "blocks/scroll-down.scss";
+@import "blocks/best-content.scss";
+@import "blocks/reviews-content.scss";
+@import "blocks/scroll-down.scss";
+@import "blocks/scroll-down.scss";
+
+
+//
+
+
+.section--main{
     background: url('img/burger-bck.png') no-repeat center center;
   /*  height: 650px; */
 }
-.nav__list{
-    @include Ubuntu500;
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    text-transform: uppercase;
-}
-.nav__list-item{
-    margin-right: 14px;
 
-
-    &:before{
-        content: '•';
-        margin-right: 15px;
-        color: white;
-    }
-
-
-   &:nth-child(1):before{
-       content: '';
-    color: black;
-    margin-right: 0;
-   }
-
-}
-.nav{
-    display: flex;
-    margin-left: 49px;
-}
-.header-btn{
-    @include Ubuntu500();
-    @include flex();
-    font-size: 13px;
-    width: 97px;
-    height: 35px;
-    border-radius: 5px;
-    background-color: $ginger;
-    text-transform: uppercase;
-
-    &:hover{
-        background-color: $orange;
-        transition: 0.3s;
-    }
-}
-.main{
-    @include flex();
-    justify-content: start;
-    height: 71%;
-}
-.main__tagline-headline{
-    @include Gagalin();
-    color: $orange;
-    padding-top: 30px;
-}
-.main__tagline-text{
-    @include Lifehack();
-    color: white;
-    font-size: 65px;
-    line-height: 0.92;
-}
-.main__tagline{
-    margin-left: 15px;
-    max-width: 406px;
-    min-height: 330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 50px;
-}
-.aside__list{
-display: flex;
-flex-direction: column;
-position: fixed;
-right: 50px;
-top: 93px;
-list-style:none;
-}
-.content{
-    display: flex;
-    height: 100%;
-}
-.aside__elem{
-    @include flex();
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: white;
-    margin-bottom: 16px;
-
-    &:hover::after{
-        content: '';
-        width: 16px;
-        height: 16px;
-        border: solid 1px #ffffff;
-        border-radius: 50%;
-        position: absolute;
-    }
-}
 .burger__container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    height: 72%;
 }
-.aside__elem-activ::after{
-   content: '';
-   width: 16px;
-   height: 16px;
-   border: solid 1px #ffffff;
-   border-radius: 50%;
-   position: absolute;
-}
-.conainer__main{
+.conainer--main{
     display: flex;
     flex-direction: column;
 }
-.best__headline{
-    @include Gagalin();
-    color: $black;
-    text-align: center;
-    margin-bottom: 55px;
-}
-.best__content{
-    padding-top: 135px;
-}
-.best__img{
-    margin-bottom: 33px;
-}
-.section__best{
-    background: url('img/best-bck.png') no-repeat center center;
-}
-.best__info-headline{
-    @include Lifehack();
-    font-size: 24px;
-    color: $black;
-    margin-bottom: 25px;
-}
-.best__info-text{
-    @include Ubuntu300();
-    color: rgba(47, 50, 52, 0.8);
-    font-size: 14px;
-    line-height: 1.71;
-}
-.best__info{
-    display: flex;
-    list-style: none;
-    justify-content: center;
-}
-.best__info-elem{
-    width: 284px;
-    margin-right: 36px;
-    text-align: center;
-}
-.reviews__container{
+.reviews--container{
     display: flex;
     flex-wrap: wrap;
 }
-.section__reviews-img{
-    height: 50vh;
-    width: 25%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
 
-}
-.arrow-scroll__absolute{
-    position: absolute;
-    bottom: 25px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-.arrow-scroll{
-    background-image: url('img/arrow-scroll.svg');
-    width: 29px;
-    height: 15px;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-.section__reviews-content{
-    display: flex;
-    flex-wrap: wrap;
-    list-style:none;
-    filter:grayscale(1);
-}
-
-.reviews__headline{
-    @include Gagalin();
-    font-size: 14px;
-    text-align: left;
-    color:white;
-    padding-bottom: 30px;
-}
-.reviews__text{
-    @include Ubuntu300();
-    font-size: 14px;
-    color:white;
-    line-height: 1.71;
-    padding-bottom: 12px;
-
-}
-.reviews__btn{
-    @include Ubuntu500();
-    @include flex();
-    text-transform: uppercase;
-    font-size: 13px;
-    color: white;
-    text-align: center;
-    width: 110px;
-    height: 35px;
-    border-radius: 5px;
-    background-color: #2f3234;
-
-    &:hover{
-        background-color: lightslategrey;
-        transition: 0.3s;
-    }
-}
-.reviews{
-    height: 100%;
-    width: 100%;
-    padding-left: 20px;
-    padding-top: 50px;
-    padding-right: 33px;
-    opacity: 0;
-
-}
-.section__reviews-img:hover .reviews{
-    opacity: 1;
-    transition: 0.5s;
-    background-color: rgba(20, 20, 20, 0.7);
-}
 .section{
     display: flex;
     height: 100vh;
     background-size: cover;
 }
-.best__container{
+.best--container{
     display: flex;
     align-items: center;
     justify-content: center;

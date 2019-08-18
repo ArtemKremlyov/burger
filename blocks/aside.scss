@@ -1,0 +1,35 @@
+.aside__list{
+display: flex;
+flex-direction: column;
+position: fixed;
+right: 50px;
+top: 93px;
+list-style:none;
+}
+
+.aside__elem{
+    @include flex();
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    margin-bottom: 16px;
+
+    &:hover::after{
+        content: '';
+        width: 16px;
+        height: 16px;
+        border: solid 1px #ffffff;
+        border-radius: 50%;
+        position: absolute;
+    }
+}
+
+.aside__elem-activ::after{
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: solid 1px #ffffff;
+    border-radius: 50%;
+    position: absolute;
+ }

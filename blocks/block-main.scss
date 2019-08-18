@@ -1,0 +1,28 @@
+.main{
+    @include flex();
+}
+.main__tagline-headline{
+    @include Gagalin();
+    color: $orange;
+    padding-top: 30px;
+}
+.main__tagline-text{
+    @include Lifehack();
+    color: white;
+    font-size: 65px;
+    line-height: 0.92;
+}
+.main__tagline{
+    margin-left: 15px;
+    max-width: 406px;
+    min-height: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+}
+.burger__container{
+    display: flex;
+    justify-content: center;
+    height: 72%;
+}

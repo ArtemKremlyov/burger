@@ -1,0 +1,62 @@
+.section__reviews-img{
+    height: 50vh;
+    width: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+}
+
+.section__reviews-content{
+    display: flex;
+    flex-wrap: wrap;
+    list-style:none;
+    filter:grayscale(1);
+}
+
+.reviews__headline{
+    @include Gagalin();
+    font-size: 14px;
+    text-align: left;
+    color:white;
+    padding-bottom: 30px;
+}
+.reviews__text{
+    @include Ubuntu300();
+    font-size: 14px;
+    color:white;
+    line-height: 1.71;
+    padding-bottom: 12px;
+
+}
+.reviews__btn{
+    @include Ubuntu500();
+    @include flex();
+    text-transform: uppercase;
+    font-size: 13px;
+    color: white;
+    text-align: center;
+    width: 110px;
+    height: 35px;
+    border-radius: 5px;
+    background-color: #2f3234;
+
+    &:hover{
+        background-color: lightslategrey;
+        transition: 0.3s;
+    }
+}
+.reviews{
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+    padding-top: 50px;
+    padding-right: 33px;
+    opacity: 0;
+
+}
+.section__reviews-img:hover .reviews{
+    opacity: 1;
+    transition: 0.5s;
+    background-color: rgba(20, 20, 20, 0.7);
+}
