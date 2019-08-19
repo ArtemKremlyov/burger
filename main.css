@@ -373,6 +373,18 @@ body {
   .headline--best {
     margin-bottom: 55px;
     text-align: center; }
+  .headline--team {
+    margin-bottom: 46px; }
+  .headline--job {
+    margin-bottom: 50px;
+    text-align: center; }
+
+button {
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  color: inherit;
+  background-color: transparent; }
 
 .header {
   margin-bottom: 20px;
@@ -636,7 +648,7 @@ body {
   background-position: center center; }
 
 .section--main {
-  background: url("img/burger-bck.png") no-repeat center center;
+  background: url("img/burger-bck.png");
   /*  height: 650px; */ }
 
 .burger__container {
@@ -655,11 +667,142 @@ body {
 .section {
   display: flex;
   height: 100vh;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
 
 .best--container {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.section--team {
+  background-image: url("img/team-bck.png");
+  position: relative; }
+
+.accordeon {
+  width: 50%;
+  height: 100%;
+  background-color: rgba(48, 51, 52, 0.9);
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.accordeon__content {
+  display: flex;
+  flex-direction: column; }
+
+.accordeon__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.accordeon__btn {
+  font-family: 'Gagalin';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 72px;
+  color: #f9b43b;
+  font-size: 14px;
+  text-transform: uppercase; }
+  .accordeon__btn::before {
+    content: '';
+    border: 5px solid transparent;
+    border-top: 7px solid #f9b43b;
+    position: absolute;
+    right: 100%;
+    top: 7px;
+    margin-right: 8px; }
+
+.accordeon__btn--active::before {
+  border: 5px solid transparent;
+  border-bottom: 7px solid #f9b43b;
+  position: absolute;
+  right: 100%;
+  top: 2px;
+  margin-right: 8px; }
+
+.accordeon__info {
+  max-height: 100px;
+  display: flex;
+  margin-top: 17px;
+  margin-bottom: 22px; }
+  .accordeon__info--hidden {
+    height: 0;
+    overflow: hidden;
+    color: white; }
+
+.accordeon__ava {
+  background-image: url("img/team-ava.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%; }
+
+.accordeon__desc {
+  max-width: 208px;
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1.71;
+  margin-left: 21px; }
+
+.accordeon__info-headline {
+  font-weight: bold; }
+
+.accordeon__item {
+  position: relative; }
+
+.section--job {
+  background-image: url("img/job-bck.png"); }
+
+.job-photo {
+  background-image: url("img/job-photo.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 600px; }
+  .job-photo::after {
+    content: '';
+    background-image: url("img/job-player.png");
+    position: absolute;
+    height: 35px; }
+
+.container--job {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.section--contacts {
+  background-image: url("img/contacts-bck.png");
+  position: relative; }
+
+.container--footer {
+  display: flex; }
+
+.footer {
+  position: absolute;
+  background-image: url("img/footer-bck.png");
+  height: 60px;
+  width: 100%;
+  bottom: 0; }
+
+.footer__contacts {
+  font-family: 'Ubuntu';
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  color: white;
+  line-height: 1.71;
+  min-width: 275px; }
+
+.footer__contacts-number {
+  font-weight: bold;
+  color: #e45028; }
 
 /*# sourceMappingURL=main.css.map */

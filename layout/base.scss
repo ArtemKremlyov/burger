@@ -42,5 +42,18 @@
           margin-bottom: 55px;
           text-align: center;
       }
+      &--team{
+          margin-bottom: 46px;
+      }
+      &--job{
+          margin-bottom:50px;
+          text-align: center;
+      }
     }
-    
+    button{
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+    }
