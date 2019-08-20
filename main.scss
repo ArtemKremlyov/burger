@@ -88,11 +88,13 @@ $black:#2f3234;
 }
 .accordeon__btn{
     @include Gagalin();
-    color: $orange;
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
 
-   
+    &--active{
+        color: $orange;
+    }
 
      &::before{
          content: '';
@@ -214,4 +216,72 @@ $black:#2f3234;
 .footer__contacts-number{
     font-weight: bold;
     color: $ginger;
+}
+
+.section--menu{
+    background-image: url('img/menu-bck.png');
+    position: relative;
+}
+.accordeon-menu__list{
+    color: white;
+    display: flex;
+    height: 100%;
+}
+.accordeon-menu__btn{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.accordeon-menu__item{
+    display: flex;
+
+    &:hover{
+        .accordeon-menu__content{
+            max-width: 500px;
+        }
+    }
+    &:hover{
+        .headline--accordeon{
+            color: $orange;
+        }
+    }
+}
+.headline--accordeon{
+    font-size: 38px;
+    margin-bottom: 50px;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+.accordeon-menu__content{
+    @include Lifehack();
+    font-size: 24px;
+    background-color: rgba(black, 0.5);
+    max-width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    height: 100%;
+}
+.accordeon-menu__text{
+    width: 500px;
+}
+.photo{
+    &--burger{
+        background-image: url('img/photo-burger.png');
+    }
+    &--vegan{
+        background-image: url('img/photo-vegan.png');
+    }
+    &--diet{
+        background-image: url('img/photo-rice.png');
+    }
+}
+.accordeon-menu{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0;
 }

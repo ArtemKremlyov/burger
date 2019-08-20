@@ -370,6 +370,8 @@ body {
     color: #2f3234; }
   .headline--color--orange {
     color: #f9b43b; }
+  .headline--color--white {
+    color: white; }
   .headline--best {
     margin-bottom: 55px;
     text-align: center; }
@@ -705,9 +707,11 @@ button {
   font-weight: normal;
   font-style: normal;
   font-size: 72px;
-  color: #f9b43b;
+  color: white;
   font-size: 14px;
   text-transform: uppercase; }
+  .accordeon__btn--active {
+    color: #f9b43b; }
   .accordeon__btn::before {
     content: '';
     border: 5px solid transparent;
@@ -804,5 +808,63 @@ button {
 .footer__contacts-number {
   font-weight: bold;
   color: #e45028; }
+
+.section--menu {
+  background-image: url("img/menu-bck.png");
+  position: relative; }
+
+.accordeon-menu__list {
+  color: white;
+  display: flex;
+  height: 100%; }
+
+.accordeon-menu__btn {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80px;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center; }
+
+.accordeon-menu__item {
+  display: flex; }
+  .accordeon-menu__item:hover .accordeon-menu__content {
+    max-width: 500px; }
+  .accordeon-menu__item:hover .headline--accordeon {
+    color: #f9b43b; }
+
+.headline--accordeon {
+  font-size: 38px;
+  margin-bottom: 50px;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg); }
+
+.accordeon-menu__content {
+  font-family: 'Lifehack';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 24px;
+  background-color: rgba(0, 0, 0, 0.5);
+  max-width: 0;
+  overflow: hidden;
+  transition: 0.5s;
+  height: 100%; }
+
+.accordeon-menu__text {
+  width: 500px; }
+
+.photo--burger {
+  background-image: url("img/photo-burger.png"); }
+.photo--vegan {
+  background-image: url("img/photo-vegan.png"); }
+.photo--diet {
+  background-image: url("img/photo-rice.png"); }
+
+.accordeon-menu {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  right: 0; }
 
 /*# sourceMappingURL=main.css.map */
