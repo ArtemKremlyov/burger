@@ -10,7 +10,7 @@
     }
     .container{
     height: 100%;
-    width: 1105px;
+    max-width: 1105px;
     margin: 0 auto;
     }
     .header--container{
@@ -39,6 +39,7 @@
         }
         &--white{
             color: white;
+            margin: 65px;
         }
       }
       &--best{
