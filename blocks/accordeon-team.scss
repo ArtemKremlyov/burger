@@ -1,0 +1,128 @@
+.section--team{
+    background-image: url('img/team-bck.png');
+    position: relative;
+}
+.accordeon{
+    width: 50%;
+    height: 100%;
+    background-color: rgba(#303334,0.9);
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+     @include tablets{
+         width: 100%;
+     }
+}
+.accordeon__content{
+    display: flex;
+    flex-direction: column;
+    
+     @include tablets{
+         align-items: center;
+     }
+}
+.accordeon__list{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.accordeon__btn{
+    @include Gagalin();
+    color: white;
+    font-size: rem(14px);
+    text-transform: uppercase;
+
+     @include tablets(){
+         font-size: rem(24px);
+     }
+
+    &--active{
+        color: $orange;
+    }
+
+     &::before{
+         content: '';
+         border: 5px solid transparent;
+         border-top: 7px solid #f9b43b;
+         position: absolute;
+         right: 100%;
+         top: rem(7px);
+         margin-right: rem(8px);
+     }
+    
+}
+
+
+
+.accordeon__info{
+   max-height: 0;
+   overflow: hidden;
+   display: flex;
+   margin-top: rem(17px);
+   margin-bottom: rem(22px);
+   align-items: center;
+
+    @include tablets(){
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+.accordeon__ava{
+    background-image: url('img/team-ava.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: rem(100px);
+    width: rem(100px);
+    border-radius: 50%;
+}
+
+.accordeon__desc{
+    max-width: rem(208px);
+    @include Ubuntu300();
+    color: #ffffff;
+    font-size: rem(14px);
+    line-height: 1.71;
+    margin-left: rem(21px);
+
+     @include tablets{
+       max-width: rem(370px);
+     }
+}
+.accordeon__info-headline{
+    font-weight: bold;
+}
+.accordeon__item{
+ position: relative;
+
+  @include tablets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+  &--active{
+      .accordeon__info{
+          max-height: rem(200px);
+      }
+
+      .accordeon__btn{
+          color: $orange;
+      }
+
+      .accordeon__btn::before{
+        border: 5px solid transparent;
+        border-top: 7px solid #f9b43b;
+        position: absolute;
+        right: 100%;
+        transform: rotate(180deg);
+        top: 0;
+        margin-right: rem(8px);
+        }
+  }
+}

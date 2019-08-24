@@ -11,11 +11,11 @@
     <div class="wrapper">
         <div class="sections">
         <section class="section section--main">
-            <div class="container">
+            <div class="container flex--container">
         <header class="header">
             <div class="container header--container">
                 <a href="#">
-                <img src="img/logo.png" alt="Логотип компании" class="logo">
+                <img src="img/svg/logo.svg" alt="Логотип компании" class="logo">
                 </a>
             <nav class="nav">
                     <ul class="nav__list">
@@ -48,7 +48,7 @@
         <div class="burger__container">
             <div class="main">
             <div class="main__burger">
-                <img src="img/burger-icon.png" alt="Картинка сочного бургера">
+                <img src="img/burger-icon.png" alt="Картинка сочного бургера" class="main__burger-icon">
             </div>
             <div class="main__tagline">
                 <div class="headline headline--color--orange">Мы делаем</div>
@@ -58,7 +58,7 @@
         </div>
       <div class="scroll">
         <a href="#" class="arrow-scroll__absolute arrow-scroll">
-                <svg class="arrow-scroll__icon">
+                <svg class="arrow-scroll__icon" viewBox="0 0 28.685 14.479">
                         <use xlink:href="sprites.svg#arrow-scroll"></use>
                     </svg>
         </a>
@@ -72,30 +72,36 @@
                 <ul class="best__info">
                     <li class="best__info-elem">
                     <div class="best__img">
-                            <svg class="meat">
+                            <svg class="best__svg" viewBox="0 0 96.428 89.246">
                                     <use xlink:href="sprites.svg#meat"></use>
                                 </svg>
                     </div>
+                    <div class="best__info-block">
                     <div class="best__info-headline">100% свежее мясо</div>
                     <p class="best__info-text">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+                    </div>
                 </li>
                     <li class="best__info-elem">
                             <div class="best__img">
-                                    <svg class="hand">
+                                    <svg class="best__svg" viewBox="0 0 73 85.875">
                                             <use xlink:href="sprites.svg#hand"></use>
                                         </svg>
                                 </div>
-                            <div class="best__info-headline">Ручная сборка</div>
-                            <p class="best__info-text">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+                                <div class="best__info-block">
+                                    <div class="best__info-headline">Ручная сборка</div>
+                                    <p class="best__info-text">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+                                    </div>
                         </li>
                             <li class="best__info-elem">
                                     <div class="best__img">
-                                            <svg class="natural">
+                                            <svg class="best__svg" viewBox="0 0 88 75.534">
                                                     <use xlink:href="sprites.svg#natural"></use>
                                                 </svg>
                                     </div>
-                                    <div class="best__info-headline">Натуральные ингредиенты</div>
-                                    <p class="best__info-text">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+                                    <div class="best__info-block">
+                                        <div class="best__info-headline">Натуральные ингредиенты</div>
+                                        <p class="best__info-text">Драма представляет собой деструктивный цикл. Анапест представляет собой анапест. Ямб неравномерен.</p>
+                                        </div>
                                 </li>
                             </ul>
                         </div>
@@ -109,7 +115,7 @@
                 <ul class="accordeon__list">
                     <li class="accordeon__item">
                         <button class="accordeon__btn">Даниэль Редклиф</button>
-                        <div class="accordeon__info accordeon__info--hidden">
+                        <div class="accordeon__info">
                             <div class="accordeon__ava"></div>
                             <div class="accordeon__desc">
                             <div class="accordeon__info-headline">Оператор</div>
@@ -117,7 +123,7 @@
                             </div>
                         </div>
                     </li>
-                    <li class="accordeon__item">       <button class="accordeon__btn accordeon__btn--active">Ричард Джеймс</button>
+                    <li class="accordeon__item accordeon__item--active">       <button class="accordeon__btn">Ричард Джеймс</button>
                         <div class="accordeon__info">
                             <div class="accordeon__ava"></div>
                             <div class="accordeon__desc">
@@ -126,7 +132,7 @@
                             </div>
                         </div></li>
                     <li class="accordeon__item">       <button class="accordeon__btn">Джеймс Финн</button>
-                        <div class="accordeon__info accordeon__info--hidden">
+                        <div class="accordeon__info ">
                             <div class="accordeon__ava"></div>
                             <div class="accordeon__desc">
                             <div class="accordeon__info-headline">Оператор</div>
@@ -134,7 +140,7 @@
                             </div>
                         </div></li>
                     <li class="accordeon__item">       <button class="accordeon__btn">Николай Иванов</button>
-                        <div class="accordeon__info accordeon__info--hidden">
+                        <div class="accordeon__info ">
                             <div class="accordeon__ava"></div>
                             <div class="accordeon__desc">
                             <div class="accordeon__info-headline">Оператор</div>
@@ -335,7 +341,7 @@
                     <ul class="footer__social-list">
                        <li class="footer__social-item">
                            <a href="#" class="footer__social-link">
-                                <svg class="social-logo" viewBox="0 0 125 70" height="25" width="25" fill="gray">
+                                <svg class="social-logo" viewBox="0 0 125 70" height="22" width="22" fill="gray">
                                 <svg class="vk">
                                         <use xlink:href="sprites.svg#vk"></use>
                                     </svg>
@@ -344,7 +350,7 @@
                        </li>
                        <li class="footer__social-item">
                             <a href="#" class="footer__social-link">
-                                 <svg class="social-logo" viewBox="0 0 35 35" height="25" width="25" fill="gray">
+                                 <svg class="social-logo" viewBox="0 0 35 35" height="22" width="22" fill="gray">
                                  <svg class="fb">
                                          <use xlink:href="sprites.svg#fb"></use>
                                      </svg>
@@ -353,7 +359,7 @@
                         </li>
                         <li class="footer__social-item">
                                 <a href="#" class="footer__social-link">
-                                     <svg class="social-logo" viewBox="0 0 35 35" height="25" width="25" fill="gray">
+                                     <svg class="social-logo" viewBox="0 0 35 35" height="22" width="22" fill="gray">
                                      <svg class="insta">
                                              <use xlink:href="sprites.svg#insta"></use>
                                          </svg>
@@ -363,7 +369,7 @@
                </li>
                <li class="footer__social-item">
                     <a href="#" class="footer__social-link">
-                         <svg class="social-logo" viewBox="0 0 35 35" height="25" width="25" fill="gray">
+                         <svg class="social-logo" viewBox="0 0 35 35" height="22" width="22" fill="gray">
                          <svg class="tw">
                                  <use xlink:href="sprites.svg#tw"></use>
                              </svg>

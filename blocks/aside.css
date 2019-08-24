@@ -1,19 +1,23 @@
 /*
-Error: Undefined mixin 'flex'.
-        on line 2 of C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss, in `flex'
-        from line 2 of C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss
+Error: Undefined mixin 'tablets'.
+        on line 9 of C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss, in `tablets'
+        from line 9 of C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss
 
-1: .main{
-2:     @include flex();
-3: 
-4:      @include tablets{
-5:          flex-direction: column;
-6:      }
-7:      @include phones{
+4: position: fixed;
+5: right: rem(50px);
+6: top: rem(93px);
+7: list-style:none;
+8: 
+9:   @include tablets{
+10:       display: none;
+11:   }
+12: }
+13: 
+14: .aside__elem{
 
 Backtrace:
-C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss:2:in `flex'
-C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss:2
+C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss:9:in `tablets'
+C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss:9
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -62,4 +66,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'flex'.\A         on line 2 of C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss, in `flex'\A         from line 2 of C:\Users\79513\Desktop\Project Burgers\blocks\block-main.scss\A \A 1: .main{\A 2:     @include flex();\A 3: \A 4:      @include tablets{\A 5:          flex-direction: column;\A 6:      }\A 7:      @include phones{"; }
+  content: "Error: Undefined mixin 'tablets'.\A         on line 9 of C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss, in `tablets'\A         from line 9 of C:\Users\79513\Desktop\Project Burgers\blocks\aside.scss\A \A 4: position: fixed;\A 5: right: rem(50px);\A 6: top: rem(93px);\A 7: list-style:none;\A 8: \A 9:   @include tablets{\A 10:       display: none;\A 11:   }\A 12: }\A 13: \A 14: .aside__elem{"; }

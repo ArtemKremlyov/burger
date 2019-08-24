@@ -4,23 +4,36 @@
     margin: 0;
     }
     
+html{
+    font-size: 16px;
+
+    @include tablets(){
+        font-size: 15px;
+    }
+    @include phones(){
+        font-size: 14px;
+    }
+}
+
     a{
      text-decoration: none;
      color: white;
     }
     .container{
     height: 100%;
+    width: 95%;
     max-width: 1105px;
     margin: 0 auto;
     }
     .header--container{
-        height: 69px;
+        height: rem(69px);
         display: flex;
         align-items: center;
         justify-content: space-between;
     }
     .wrapper{
-       width:100vw;
+       width:100%;
+       overflow: hidden;
     }
     
     body{
@@ -39,20 +52,25 @@
         }
         &--white{
             color: white;
-            margin: 65px;
+            margin: rem(65px);
         }
       }
       &--best{
-          margin-bottom: 55px;
+          margin-bottom: rem(55px);
           text-align: center;
       }
       &--team{
-          margin-bottom: 46px;
+          margin-bottom: rem(46px);
       }
       &--job{
-          margin-bottom:50px;
+          margin-bottom:rem(50px);
           text-align: center;
       }
+
+       @include phones{
+           font-size: rem(60px);
+           text-align: center;
+       }
     }
     button{
     text-decoration: none;
@@ -60,4 +78,18 @@
     cursor: pointer;
     color: inherit;
     background-color: transparent;
+    }
+    .section{
+        display: flex;
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
+    
+    .flex--container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }

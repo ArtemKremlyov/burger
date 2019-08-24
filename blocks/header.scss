@@ -1,22 +1,26 @@
 .header{
-    margin-bottom: 20px;
-    padding-top:13px;
+    margin-bottom: rem(20px);
+    padding-top:rem(13px);
 }
 .nav__list{
     @include Ubuntu500;
-    font-size: 13px;
+    font-size: rem(13px);
     display: flex;
     align-items: center;
     list-style: none;
     text-transform: uppercase;
+
+      @include tablets{
+          display: none;
+      }
 }
 .nav__list-item{
-    margin-right: 14px;
+    margin-right: rem(14px);
 
 
     &:before{
         content: '•';
-        margin-right: 15px;
+        margin-right: rem(15px);
         color: white;
     }
 
@@ -30,14 +34,14 @@
 }
 .nav{
     display: flex;
-    margin-left: 49px;
+    margin-left: rem(49px);
 }
 .header-btn{
     @include Ubuntu500();
     @include flex();
-    font-size: 13px;
-    width: 97px;
-    height: 35px;
+    font-size: rem(13px);
+    width: rem(97px);
+    height: rem(35px);
     border-radius: 5px;
     background-color: $ginger;
     text-transform: uppercase;
