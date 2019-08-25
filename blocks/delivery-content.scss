@@ -37,6 +37,10 @@
     flex: 1;
     margin-bottom: rem(19px);
       
+      @include  phones{
+          margin-bottom:rem(9px);
+      }
+       
       &:last-child{
           margin: 0;
 
@@ -79,6 +83,11 @@
          flex-direction: column;
          padding: 0 15%;
      }
+
+     @include phones{
+         padding:0 3%;
+         margin-top:rem(25px);
+     }
 }
 .form__textarea{
     resize: none;
@@ -109,6 +118,7 @@
     border-radius: 50%;
     background-color: #fff;
     margin-right: rem(10px);
+    flex: 0 0 auto;
 
      &:after{
         content: '';

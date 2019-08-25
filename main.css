@@ -794,6 +794,9 @@ button {
   display: flex;
   flex: 1;
   margin-bottom: 1.1875rem; }
+  @media screen and (max-width: 480px) {
+    .form__row {
+      margin-bottom: 0.5625rem; } }
   .form__row:last-child {
     margin: 0; }
   @media screen and (max-width: 768px) {
@@ -819,6 +822,10 @@ button {
     .form {
       flex-direction: column;
       padding: 0 15%; } }
+  @media screen and (max-width: 480px) {
+    .form {
+      padding: 0 3%;
+      margin-top: 1.5625rem; } }
 
 .form__textarea {
   resize: none;
@@ -850,7 +857,8 @@ button {
   height: 1rem;
   border-radius: 50%;
   background-color: #fff;
-  margin-right: 0.625rem; }
+  margin-right: 0.625rem;
+  flex: 0 0 auto; }
   .radio-btn:after {
     content: '';
     display: block;
