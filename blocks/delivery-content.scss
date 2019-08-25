@@ -43,7 +43,6 @@
       }
 
       &:nth-child(3){
-          margin:0;
           @include tablets{
             margin-bottom: rem(20px);
         }
@@ -55,11 +54,6 @@
                   display: none;
               }
           }
-          &:nth-child(3){
-            @include phones{
-                margin: 0;;
-            }
-        }
       }
     
 }
@@ -140,5 +134,37 @@
 .input-checkbox{
     width: rem(16px);
     height: rem(16px);
+    opacity: 0;
+    position: absolute;
 }
 
+.form__btns{
+    @include phones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.checkbox-btn{
+    width: rem(16px);
+    height: rem(16px);
+    background-color: white;
+    position: relative;
+     &::after{
+         content:'';
+         position: absolute;
+         background-image: url('img/check-mark.png');
+         width: 100%;
+         height: 100%;
+         background-repeat: no-repeat;
+         background-position:center center;
+         opacity: 0;
+     }
+}
+.checkbox__content{
+   display: flex;
+}
+.input-checkbox:checked + .checkbox__content .checkbox-btn:after{
+    opacity: 1;
+}

@@ -1,6 +1,10 @@
 .header{
     margin-bottom: rem(20px);
     padding-top:rem(13px);
+
+    @include phones{
+        margin-top: rem(13px);
+    }
 }
 .nav__list{
     @include Ubuntu500;

@@ -394,7 +394,7 @@ body {
     text-align: center; }
   @media screen and (max-width: 480px) {
     .headline {
-      font-size: 3.75rem;
+      font-size: 3.4375rem;
       text-align: center; } }
 
 button {
@@ -419,6 +419,9 @@ button {
 .header {
   margin-bottom: 1.25rem;
   padding-top: 0.8125rem; }
+  @media screen and (max-width: 480px) {
+    .header {
+      margin-top: 0.8125rem; } }
 
 .nav__list {
   font-family: 'Ubuntu';
@@ -793,17 +796,12 @@ button {
   margin-bottom: 1.1875rem; }
   .form__row:last-child {
     margin: 0; }
-  .form__row:nth-child(3) {
-    margin: 0; }
-    @media screen and (max-width: 768px) {
-      .form__row:nth-child(3) {
-        margin-bottom: 1.25rem; } }
+  @media screen and (max-width: 768px) {
+    .form__row:nth-child(3) {
+      margin-bottom: 1.25rem; } }
   @media screen and (max-width: 480px) {
     .form__row .form__label:nth-child(4) {
       display: none; } }
-  @media screen and (max-width: 480px) {
-    .form__row .form__label:nth-child(3) {
-      margin: 0; } }
 
 .form__label {
   flex: 1;
@@ -877,7 +875,37 @@ button {
 
 .input-checkbox {
   width: 1rem;
-  height: 1rem; }
+  height: 1rem;
+  opacity: 0;
+  position: absolute; }
+
+@media screen and (max-width: 480px) {
+  .form__btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; } }
+
+.checkbox-btn {
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  position: relative; }
+  .checkbox-btn::after {
+    content: '';
+    position: absolute;
+    background-image: url("img/check-mark.png");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0; }
+
+.checkbox__content {
+  display: flex; }
+
+.input-checkbox:checked + .checkbox__content .checkbox-btn:after {
+  opacity: 1; }
 
 .section--job {
   background-image: url("img/job-bck.png"); }
@@ -1133,5 +1161,29 @@ button {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat; }
+
+.form__btn {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8125rem;
+  width: 6.0625rem;
+  height: 2.1875rem;
+  border-radius: 5px;
+  background-color: #e45028;
+  text-transform: uppercase;
+  color: white; }
+
+.clear-btn {
+  font-family: 'Ubuntu';
+  font-weight: 500;
+  font-style: normal;
+  color: white;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  margin-left: 20px; }
 
 /*# sourceMappingURL=main.css.map */

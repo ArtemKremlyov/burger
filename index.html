@@ -252,7 +252,7 @@
           <div class="container container--delivery">
               <div class="headline headline--color--orange">Закажите доставку</div>
               <div class="form-wrappe">
-              <form action="action" name="form" class="form">
+              <form action="action" name="form" class="form" >
                   <div class="form__column">
                         <div class="form__row">
                                 <label class="form__label">
@@ -298,6 +298,7 @@
                                    <textarea type="text" name="input" class="form__textarea"></textarea>
                                 </label>
                             </div>
+                            <div class="form__btns">
                             <div class="form__row">
                                 <label class="radio-label">
                                     <input name="radio" type="radio" class="radio-input">
@@ -316,7 +317,15 @@
                                 </div>
                                 <div class="form__row">
                                     <input type="checkbox" name="checkbox" class="input-checkbox">
+                                    <div class="checkbox__content">
+                                    <div class="checkbox-btn"></div>
                                     <div class="checkbox-text">Не перезванивать</div>
+                                    </div>
+                                </div>
+                                <div class="form__row">
+                                    <button class="form__btn" type="submit">Заказать</button>
+                                    <button class="clear-btn" type="reset">Очистить</button>
+                                </div>
                                 </div>
                   </div>
               </form>

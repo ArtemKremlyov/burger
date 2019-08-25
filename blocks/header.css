@@ -1,23 +1,22 @@
 /*
-Error: Undefined mixin 'Ubuntu500'.
-        on line 6 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss, in `Ubuntu500'
-        from line 6 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss
+Error: Undefined mixin 'phones'.
+        on line 5 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss, in `phones'
+        from line 5 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss
 
 1: .header{
 2:     margin-bottom: rem(20px);
 3:     padding-top:rem(13px);
-4: }
-5: .nav__list{
-6:     @include Ubuntu500;
-7:     font-size: rem(13px);
-8:     display: flex;
-9:     align-items: center;
-10:     list-style: none;
-11:     text-transform: uppercase;
+4: 
+5:     @include phones{
+6:         margin-top: rem(13px);
+7:     }
+8: }
+9: .nav__list{
+10:     @include Ubuntu500;
 
 Backtrace:
-C:\Users\79513\Desktop\Project Burgers\blocks\header.scss:6:in `Ubuntu500'
-C:\Users\79513\Desktop\Project Burgers\blocks\header.scss:6
+C:\Users\79513\Desktop\Project Burgers\blocks\header.scss:5:in `phones'
+C:\Users\79513\Desktop\Project Burgers\blocks\header.scss:5
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:98:in `block in with_mixin'
 C:/Program Files (x86)/Koala/rubygems/gems/sass-3.5.2/lib/sass/stack.rb:135:in `with_frame'
@@ -66,4 +65,4 @@ C:/Program Files (x86)/Koala/bin/sass:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'Ubuntu500'.\A         on line 6 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss, in `Ubuntu500'\A         from line 6 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss\A \A 1: .header{\A 2:     margin-bottom: rem(20px);\A 3:     padding-top:rem(13px);\A 4: }\A 5: .nav__list{\A 6:     @include Ubuntu500;\A 7:     font-size: rem(13px);\A 8:     display: flex;\A 9:     align-items: center;\A 10:     list-style: none;\A 11:     text-transform: uppercase;"; }
+  content: "Error: Undefined mixin 'phones'.\A         on line 5 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss, in `phones'\A         from line 5 of C:\Users\79513\Desktop\Project Burgers\blocks\header.scss\A \A 1: .header{\A 2:     margin-bottom: rem(20px);\A 3:     padding-top:rem(13px);\A 4: \A 5:     @include phones{\A 6:         margin-top: rem(13px);\A 7:     }\A 8: }\A 9: .nav__list{\A 10:     @include Ubuntu500;"; }
