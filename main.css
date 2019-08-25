@@ -858,7 +858,7 @@ button {
     height: 0.5rem;
     background-color: #e45028;
     border-radius: 50%;
-    opacity: 0;
+    opacity: 1;
     transition: 0.2s; }
 
 .radio-content {
