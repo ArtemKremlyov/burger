@@ -975,7 +975,9 @@ button {
   text-transform: uppercase; }
   @media screen and (max-width: 768px) {
     .accordeon__btn {
-      font-size: 1.5rem; } }
+      font-size: 1.5rem;
+      display: inline-block;
+      position: relative; } }
   .accordeon__btn--active {
     color: #f9b43b; }
   .accordeon__btn::before {
@@ -986,6 +988,9 @@ button {
     right: 100%;
     top: 0.4375rem;
     margin-right: 0.5rem; }
+    @media screen and (max-width: 768px) {
+      .accordeon__btn::before {
+        top: 0.625rem; } }
 
 .accordeon__info {
   max-height: 0;
@@ -1007,6 +1012,9 @@ button {
   height: 6.25rem;
   width: 6.25rem;
   border-radius: 50%; }
+  @media screen and (max-width: 768px) {
+    .accordeon__ava {
+      margin-left: 1.25rem; } }
 
 .accordeon__desc {
   max-width: 13rem;
@@ -1044,6 +1052,9 @@ button {
     transform: rotate(180deg);
     top: 0;
     margin-right: 0.5rem; }
+    @media screen and (max-width: 768px) {
+      .accordeon__item--active .accordeon__btn::before {
+        top: 0.3125rem; } }
 
 .section--menu {
   background-image: url("img/menu-bck.png");

@@ -38,6 +38,8 @@
 
      @include tablets(){
          font-size: rem(24px);
+         display: inline-block;
+         position: relative;
      }
 
     &--active{
@@ -52,6 +54,10 @@
          right: 100%;
          top: rem(7px);
          margin-right: rem(8px);
+
+         @include tablets{
+             top: rem(10px);
+         }
      }
     
 }
@@ -79,6 +85,10 @@
     height: rem(100px);
     width: rem(100px);
     border-radius: 50%;
+
+     @include tablets{
+         margin-left: rem(20px);
+     }
 }
 
 .accordeon__desc{
@@ -123,6 +133,10 @@
         transform: rotate(180deg);
         top: 0;
         margin-right: rem(8px);
+
+         @include tablets{
+             top: rem(5px);
+         }
         }
   }
 }
