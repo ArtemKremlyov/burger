@@ -15,6 +15,10 @@
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+
+     @include phones{
+         width: 3rem;
+     }
 }
 .accordeon-menu__item{
     display: flex;
@@ -39,6 +43,10 @@
     margin-bottom: rem(50px);
     writing-mode: vertical-lr;
     transform: rotate(180deg);
+
+     @include phones{
+         font-size: rem(30px);
+     }
 }
 .accordeon-menu__content{
     @include Ubuntu300();
@@ -52,6 +60,10 @@
 .accordeon-menu__text{
     width: rem(500px);
     padding: rem(60px) rem(5px) rem(0px) rem(20px);
+    
+     @include phones{
+         width: 100%;
+     }
 }
 .accordeon-menu{
     position: absolute;

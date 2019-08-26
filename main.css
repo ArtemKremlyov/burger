@@ -1073,6 +1073,9 @@ button {
   display: flex;
   flex-direction: column-reverse;
   align-items: center; }
+  @media screen and (max-width: 480px) {
+    .accordeon-menu__btn {
+      width: 3rem; } }
 
 .accordeon-menu__item {
   display: flex; }
@@ -1089,6 +1092,9 @@ button {
   margin-bottom: 3.125rem;
   writing-mode: vertical-lr;
   transform: rotate(180deg); }
+  @media screen and (max-width: 480px) {
+    .headline--accordeon {
+      font-size: 1.875rem; } }
 
 .accordeon-menu__content {
   font-family: 'Ubuntu';
@@ -1104,6 +1110,9 @@ button {
 .accordeon-menu__text {
   width: 31.25rem;
   padding: 3.75rem 0.3125rem 0rem 1.25rem; }
+  @media screen and (max-width: 480px) {
+    .accordeon-menu__text {
+      width: 100%; } }
 
 .accordeon-menu {
   position: absolute;
