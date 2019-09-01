@@ -3,6 +3,7 @@ let aside = document.querySelector('.aside-menu');
 let cross = document.querySelector('.cross')
 let sliderCross = document.querySelector('.slider-cross');
 let sliderDrop = document.querySelector('.slider-drop');
+let sliderComposition = document.querySelector('.slider-composition');
 
 button.addEventListener ('click', function(){
     aside.style.right = '0'
@@ -10,9 +11,13 @@ button.addEventListener ('click', function(){
 cross.addEventListener('click', function(){
     aside.style.right = '10000px';
 })
- //slider,addEventListener('click', function(){
- //   sliderDrop.style.left = '-1000px';
+//sliderComposition.addEventListener('click', function(){
+//    sliderDrop.style.left = '100%';
 // })
+//sliderCross.addEventListener('click', function(){
+ //   sliderDrop.style.left = '-1000px';
+//})
+
 
 let a = document.querySelectorAll('.aside-menu__link');
 for (let i = 0; i < a.length; i++) { a[i].addEventListener('click', function() { aside.style.right = '-100%' }) }

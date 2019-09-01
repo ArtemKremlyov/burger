@@ -1376,7 +1376,8 @@ ul, li {
   display: none; }
   @media screen and (max-width: 768px) {
     .slider-cross {
-      display: block; } }
+      display: block;
+      top: 2%; } }
 
 .slider-drop__list {
   display: flex;
@@ -1384,7 +1385,6 @@ ul, li {
 
 .slider-drop__elem {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 1.5625rem; }
 
@@ -1397,7 +1397,11 @@ ul, li {
 .slider-drop__weight {
   font-family: 'Ubuntu';
   font-weight: 300;
-  font-style: normal; }
+  font-style: normal;
+  margin-left: auto; }
+
+.slider-icon {
+  margin-right: 0.9375rem; }
 
 .kkal-icon {
   width: 3.75rem;
@@ -1481,6 +1485,8 @@ ul, li {
   position: relative; }
   .aside-menu__elem:last-child {
     margin: 0; }
+    .aside-menu__elem:last-child .aside-menu__link::after {
+      content: ''; }
 
 .aside-menu__link {
   font-family: 'Ubuntu';
@@ -1499,5 +1505,13 @@ ul, li {
   position: absolute;
   right: 5%;
   top: 4%; }
+
+@media screen and (max-width: 480px) {
+  .arrow-scroll {
+    position: absolute;
+    top: 40%; } }
+@media screen and (max-width: 480px) {
+  .arrow-scroll--right {
+    right: 0; } }
 
 /*# sourceMappingURL=main.css.map */

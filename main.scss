@@ -242,6 +242,7 @@ $black:#2f3234;
 
      @include tablets{
          display: block;
+         top: 2%
      }
 }
 .slider-drop__list{
@@ -250,7 +251,6 @@ $black:#2f3234;
 }
 .slider-drop__elem{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     margin-bottom: rem(25px);
 }
@@ -260,6 +260,10 @@ $black:#2f3234;
 }
 .slider-drop__weight{
     @include Ubuntu300;
+    margin-left:auto;
+}
+.slider-icon{
+    margin-right: rem(15px);
 }
 .kkal-icon{
     width: rem(60px);
@@ -358,7 +362,15 @@ $black:#2f3234;
 
     &:last-child{
         margin: 0;
+
+        .aside-menu__link{
+            &::after{
+                content: '';
+            }
+        }
     }
+
+    
 }
 
 .aside-menu__link{
@@ -378,4 +390,15 @@ $black:#2f3234;
     position: absolute;
     right: 5%;
     top: 4%;
+}
+.arrow-scroll{
+    @include phones{
+        position:absolute;
+        top: 40%;
+    }
+  &--right{
+      @include phones{
+          right: 0;
+      }
+  }    
 }
