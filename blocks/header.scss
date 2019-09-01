@@ -54,4 +54,8 @@
         background-color: $orange;
         transition: 0.3s;
     }
+
+    @include tablets{
+        margin-right: rem(50px);
+    }
 }

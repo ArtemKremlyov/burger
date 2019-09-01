@@ -22,7 +22,7 @@ html{
     .container{
     height: 100%;
     width: 95%;
-    max-width: 1105px;
+    max-width: 1080px;
     margin: 0 auto;
     }
     .header--container{
@@ -92,4 +92,11 @@ html{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+    }
+    input{
+         &:focus{border: none;}
+    }
+
+    ul,li{
+        list-style: none;
     }

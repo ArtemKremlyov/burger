@@ -31,6 +31,11 @@
     border-radius: 5px;
     width: 100%;
     height: rem(36px);
+
+     &:focus{
+         border: $orange 3px solid;
+         outline: none;
+     }
 }
 .form__row{
     display: flex;

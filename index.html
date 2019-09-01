@@ -5,8 +5,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="main.css">
+
     <title>Бургерная</title>
-    <script src="scripts/index.js"></script>
 </head>
 <body>
     <div class="wrapper">
@@ -21,28 +21,28 @@
             <nav class="nav">
                     <ul class="nav__list">
                             <li class="nav__list-item">
-                                    <a href="#" class="nav__list-link">О нас</a>
+                                    <a href="#we-best" class="nav__list-link">О нас</a>
                             </li>
                         <li class="nav__list-item">
-                            <a href="#" class="nav__list-link">Бургеры</a>
+                            <a href="#slider" class="nav__list-link">Бургеры</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#" class="nav__list-link">Команда</a>
+                                <a href="#team" class="nav__list-link">Команда</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#" class="nav__list-link">Меню</a>
+                                <a href="#menu" class="nav__list-link">Меню</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#" class="nav__list-link">Отзывы</a>
+                                <a href="#rev" class="nav__list-link">Отзывы</a>
                         </li>                            
                         <li class="nav__list-item">
-                                <a href="#" class="nav__list-link">Как мы работаем</a>
+                                <a href="#how-job" class="nav__list-link">Как мы работаем</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#" class="nav__list-link">Контакты</a>
+                                <a href="#contacts" class="nav__list-link">Контакты</a>
                         </li>
                     </ul>
-                    <a href="#" class="nav__list-link header-btn">Заказать</a>
+                    <a href="#delivery" class="nav__list-link header-btn">Заказать</a>
                 </nav>
             </div>
         </header>
@@ -66,7 +66,7 @@
         </div>
         </div>
     </section>
-        <section class="section section--best">
+        <section class="section section--best" id="we-best">
             <div class="container best--container">
             <div class="best">
                 <div class="headline headline--color--black headline--best">Мы лучшие</div>
@@ -109,7 +109,105 @@
     </section>
 
 
-      <section class="section section--team">
+    <section class="section section--slider" id="slider">
+      <div class="container container--slider">
+          <a href="#" class="arrow-slider">
+            <svg class="arrow-scroll__icon arrow-scroll--left" viewBox="0 0 28.685 14.479">
+                    <use xlink:href="sprites.svg#arrow-scroll"></use>
+                </svg>
+            </a>
+        <ul class="slider-list">
+            <li class="slider-elem">
+          <div class="slider-img">
+              <div class="slider-composition">
+                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                    <use xlink:href="sprites.svg#burger"></use>
+                </svg>
+                <div class="slider-img__text">Состав</div>
+                <div class="slider-drop">
+                    <ul class="slider-drop__list">
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                                        <use xlink:href="sprites.svg#beef"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Говядина</div>
+                                    <div class="slider-drop__weight">300г</div>
+                        </li>
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 48 30">
+                                        <use xlink:href="sprites.svg#buns"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Булочки</div>
+                                    <div class="slider-drop__weight">100г</div>
+                        </li>
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                                        <use xlink:href="sprites.svg#salad"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Зелень</div>
+                                    <div class="slider-drop__weight">70г</div>
+                        </li>
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                                        <use xlink:href="sprites.svg#sauce"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Соус</div>
+                                    <div class="slider-drop__weight">150г</div>
+                        </li>
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                                        <use xlink:href="sprites.svg#cocumber"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Овощи</div>
+                                    <div class="slider-drop__weight">200г</div>
+                        </li>
+                        <li class="slider-drop__elem">
+                                <svg class="slider__svg" viewBox="0 0 45 44.534">
+                                        <use xlink:href="sprites.svg#chesee"></use>
+                                    </svg>
+                                    <div class="slider-drop__name">Сыр</div>
+                                    <div class="slider-drop__weight">80г</div>
+                        </li>
+                    </ul>
+                    <button class="slider-cross">
+                        <img src="img/cross.png" alt="Выход">
+                    </button>
+                </div>
+              </div>
+              <div class="slider-burger">
+                  <img src="img/black-burger-icon.png" alt="Темный бургер" class="icon-black">
+              </div>
+              <div class="slider-weight">
+                    <svg class="kkal-icon" viewBox="0 0 60 60">
+                            <use xlink:href="sprites.svg#kkal"></use>
+                        </svg>
+                        <div class="slider-img__text weight-text weight-text--kkal">1200</div>
+                        <div class="slider-img__text weight-text weight-text--info">Ккал</div>
+
+
+              </div>
+          </div>
+          <div class="slider-info">
+              <div class="headline headline--color--white headline--slider">Dark beef burger</div>
+              <div class="slider-text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</div>
+              <div class="slider-order">
+              <span class="slider-price"><span class="slider-price__upercase">500</span>рублей</span>
+              <a href="#" class="slider-btn">Заказать</a>
+              </div>
+          </div>
+            </li>
+            </ul>
+            <a href="#">
+            <svg class="arrow-scroll__icon arrow-scroll--right" viewBox="0 0 28.685 14.479">
+                    <use xlink:href="sprites.svg#arrow-scroll"></use>
+                </svg>
+                </a>
+      </div>
+    </section>
+    
+
+
+      <section class="section section--team" id="team">
             <div class="accordeon">
                 <div class="accordeon__content">
                 <div class="headline headline--color--orange headline--team">Команда</div>
@@ -153,7 +251,7 @@
             </div>
       </section>
 
-       <section class="section section--menu">
+       <section class="section section--menu" id="menu">
            <div class="headline headline--color--white">Меню</div>
            <div class="accordeon-menu">
                <ul class="accordeon-menu__list">
@@ -175,7 +273,7 @@
 
 
 
-        <section class="section section--reviews">
+        <section class="section section--reviews" id="rev">
                 <ul class="section__reviews-content">
                 <li class="section__reviews-img" style="background-image: url('img/reviews__ava-one.png')">
                    <div class="reviews">
@@ -239,7 +337,7 @@
 
        
 
-        <section class="section section--job">
+        <section class="section section--job" id="how-job">
             <div class="container container--job">
                 <div class="headline headline--color--black headline--job">Как мы работаем</div>
                 <div class="job-photo">
@@ -249,7 +347,7 @@
 
 
 
-      <section class="section section--delivery">
+      <section class="section section--delivery" id="delivery">
           <div class="container container--delivery">
               <div class="headline headline--color--orange">Закажите доставку</div>
               <div class="form-wrappe">
@@ -338,7 +436,8 @@
 
 
 
-    <section class="section section--contacts">
+    <section class="section section--contacts" id="contacts">
+      <div id="map" style="width: 100%; height: 100%"></div>
         <footer class="footer">
             <div class="container container--footer">
                 <div class="footer__contacts">
@@ -391,6 +490,7 @@
                     </ul>
                 </div>
                 </div>
+
             </div>
         </footer>
     </section>
@@ -400,8 +500,51 @@
 
 
 
-
         </div>
+
+
+
+
+      <button class="fullscr-btn" id="btn-js">
+          <div class="fullscr-btn__elem"></div>
+          <div class="fullscr-btn__elem"></div>
+          <div class="fullscr-btn__elem"></div>
+      </button>
+
+
+
+
+      <aside class="aside-menu" id="aside-js">
+            <img src="img/logo.png" alt="logo" class="logo">
+            <button class="cross">
+                <img src="img/cross.png" alt="">
+            </button>
+            <ul class="aside-menu__list">
+                <li class="aside-menu__elem">
+                    <a href="#we-best" class="aside-menu__link">О нас</a>
+                </li>
+                <li class="aside-menu__elem">
+                      <a href="#slider" class="aside-menu__link">Бургеры</a>
+                  </li>
+                  <li class="aside-menu__elem">
+                          <a href="#team" class="aside-menu__link">Команда</a>
+                      </li>
+                      <li class="aside-menu__elem">
+                              <a href="#menu" class="aside-menu__link">Меню</a>
+                          </li>
+                          <li class="aside-menu__elem">
+                                  <a href="#rev" class="aside-menu__link">Отзывы</a>
+                              </li>
+                              <li class="aside-menu__elem">
+                                      <a href="#contacts" class="aside-menu__link">Контакты</a>
+                                  </li>
+            </ul>
+        </aside>
+
+
+
+
+
         <aside class="aside">
         <ul class="aside__list">
             <li class="aside__item">
@@ -409,40 +552,43 @@
 
             </li>
             <li class="aside__item">
-                <a href="#" class="aside__elem"></a>
+                <a href="#we-best" class="aside__elem"></a>
 
                 </li>
                 <li class="aside__item">
-                    <a href="#" class="aside__elem"></a>
+                    <a href="#slider" class="aside__elem"></a>
 
                     </li>
                     <li class="aside__item">
-                        <a href="#" class="aside__elem"></a>
+                        <a href="#team" class="aside__elem"></a>
    
                         </li>
                         <li class="aside__item">
-                            <a href="#" class="aside__elem"></a>
+                            <a href="#menu" class="aside__elem"></a>
 
                             </li>
                             <li class="aside__item">
-                                <a href="#" class="aside__elem"></a>
+                                <a href="#rev" class="aside__elem"></a>
 
                                 </li>
                                 <li class="aside__item">
-                                    <a href="#" class="aside__elem"></a>
+                                    <a href="#how-job" class="aside__elem"></a>
 
                                     </li>
                                     <li class="aside__item">
-                                        <a href="#" class="aside__elem"></a>
+                                        <a href="#delivery" class="aside__elem"></a>
 
                                         </li>
                                         <li class="aside__item">
-                                            <a href="#" class="aside__elem"></a>
+                                            <a href="#contacts" class="aside__elem"></a>
 
                                             </li>
                                         </ul>
         </aside>
         </div>
     </div>
+    <script src="scripts/index.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=0007e342-f77e-4c6a-9f5e-6c09066ac1c5&lang=ru_RU" type="text/javascript">
+    </script>
 </body>
 </html>
