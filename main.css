@@ -853,7 +853,8 @@ ul, li {
   font-style: normal;
   font-size: 0.875rem;
   color: white;
-  display: flex; }
+  display: flex;
+  position: relative; }
 
 .radio-input {
   position: absolute;
