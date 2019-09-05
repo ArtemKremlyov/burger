@@ -402,7 +402,8 @@ button {
   border: 0;
   cursor: pointer;
   color: inherit;
-  background-color: transparent; }
+  background-color: transparent;
+  outline: none; }
 
 .section {
   display: flex;
@@ -1093,12 +1094,12 @@ ul, li {
 
 .accordeon-menu__item {
   display: flex; }
-  .accordeon-menu__item:hover .accordeon-menu__content {
+  .accordeon-menu__item--active .accordeon-menu__content {
     max-width: 31.25rem; }
     @media screen and (max-width: 480px) {
-      .accordeon-menu__item:hover .accordeon-menu__content {
+      .accordeon-menu__item--active .accordeon-menu__content {
         max-width: 12.25rem; } }
-  .accordeon-menu__item:hover .headline--accordeon {
+  .accordeon-menu__item--active .headline--accordeon {
     color: #f9b43b; }
 
 .headline--accordeon {
