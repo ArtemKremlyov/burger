@@ -1234,8 +1234,18 @@ ul, li {
 
 .container--slider {
   display: flex;
-  align-items: center;
   position: relative; }
+
+.slider-list {
+  width: 100%;
+  overflow: hidden; }
+
+.arrow-btns {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  top: 45%; }
 
 .headline--slider {
   margin-left: 0;
@@ -1244,7 +1254,8 @@ ul, li {
   margin-bottom: 2.8125rem; }
   @media screen and (max-width: 480px) {
     .headline--slider {
-      font-size: 2.9375rem; } }
+      font-size: 2.9375rem;
+      margin-bottom: 0.625rem; } }
 
 .slider-text {
   font-family: 'Ubuntu';
@@ -1285,6 +1296,9 @@ ul, li {
   .slider-price span {
     font-size: 4.5rem;
     margin-right: 0.5rem; }
+    @media screen and (max-width: 480px) {
+      .slider-price span {
+        font-size: 2.875rem; } }
 
 .slider-btn {
   font-family: 'Ubuntu';
@@ -1308,7 +1322,11 @@ ul, li {
   max-width: 100%; }
 
 .icon-black {
-  max-width: 100%; }
+  max-width: 100%;
+  width: 500px; }
+  @media screen and (max-width: 480px) {
+    .icon-black {
+      padding-left: 7%; } }
 
 .arrow-scroll--left {
   transform: rotate(90deg); }
@@ -1316,6 +1334,12 @@ ul, li {
 .arrow-scroll--right {
   transform: rotate(-90deg);
   margin-left: 1.25rem; }
+
+.slider-img {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative; }
 
 .slider-composition {
   width: 5.625rem;
@@ -1332,8 +1356,8 @@ ul, li {
   transition: 0.5s; }
   @media screen and (max-width: 768px) {
     .slider-composition {
-      top: 10%;
-      left: 15%; } }
+      top: 0%;
+      left: 0%; } }
   @media screen and (max-width: 480px) {
     .slider-composition {
       left: 2%; } }
@@ -1346,11 +1370,18 @@ ul, li {
 
 .slider-elem {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  height: 100%;
+  min-width: 100%;
+  justify-content: center; }
   @media screen and (max-width: 768px) {
     .slider-elem {
       flex-direction: column;
-      text-align: center; } }
+      text-align: center;
+      padding: 10%; } }
+  @media screen and (max-width: 480px) {
+    .slider-elem {
+      padding: 10% 2%; } }
 
 .slider-drop {
   max-width: 37.5rem;
@@ -1427,8 +1458,8 @@ ul, li {
   bottom: 25%; }
   @media screen and (max-width: 768px) {
     .slider-weight {
-      top: 11%;
-      left: 73%; } }
+      top: 0;
+      left: 84%; } }
   @media screen and (max-width: 480px) {
     .slider-weight {
       left: 87%; } }
@@ -1447,6 +1478,10 @@ ul, li {
     @media screen and (max-width: 768px) {
       .weight-text--kkal {
         top: 3%; } }
+    @media screen and (max-width: 480px) {
+      .weight-text--kkal {
+        font-size: 1.125rem;
+        top: 7%; } }
 
 .fullscr-btn__elem {
   width: 1.6875rem;
@@ -1462,7 +1497,11 @@ ul, li {
   display: none; }
   @media screen and (max-width: 768px) {
     .fullscr-btn {
-      display: block; } }
+      display: block;
+      top: 3.8%; } }
+  @media screen and (max-width: 480px) {
+    .fullscr-btn {
+      top: 5%; } }
 
 .aside-menu {
   background: rgba(47, 50, 52, 0.99);
