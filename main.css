@@ -1238,7 +1238,8 @@ ul, li {
 
 .slider-list {
   width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  display: flex; }
 
 .arrow-btns {
   position: absolute;
@@ -1323,7 +1324,7 @@ ul, li {
 
 .icon-black {
   max-width: 100%;
-  width: 500px; }
+  width: 28.125rem; }
   @media screen and (max-width: 480px) {
     .icon-black {
       padding-left: 7%; } }
@@ -1390,7 +1391,7 @@ ul, li {
   background: rgba(232, 233, 235, 0.9);
   border-radius: 5px;
   position: absolute;
-  left: -1000px;
+  left: -15000px;
   top: 0;
   padding-top: 1.25rem;
   padding-left: 0.9375rem;

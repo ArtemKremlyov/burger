@@ -35,7 +35,7 @@ buttonLeft.addEventListener('click',function(e){
 
 function loop (directionButton){
     if (directionButton === 'buttonRight'){
-       sliderList.appendChild(sliderList.firstChild);
+       sliderList.appendChild(sliderList.firstElementChild);
     }
     else{
         sliderList.insertBefore(sliderList.lastElementChild, sliderList.firstElementChild);
