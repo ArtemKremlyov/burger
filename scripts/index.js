@@ -193,7 +193,6 @@ const formBtn = document.querySelector('.form__btn');
 formBtn.addEventListener('click',function(e){
     e.preventDefault();
     createOverlay();
-    overlay.textContent = 'Не получен запрос от сервера';
     let xhr = new XMLHttpRequest();
 
     const data = {
@@ -210,7 +209,7 @@ formBtn.addEventListener('click',function(e){
 
     function validateForm(){
 
-        if  (form.elements.name.checkValidity() && form.elements.number.checkValidity() && form.elements.comment.checkValidity()){
+        if  (form.elements.name.checkValidity() && form.elements.phone.checkValidity() && form.elements.comment.checkValidity()){
             return true;
         }
         else{
