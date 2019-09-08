@@ -187,70 +187,67 @@ reviewsCrossBlock.addEventListener('click',function(){
 
 
 })
-const form = document.querySelector('.form');
-const formBtn = document.querySelector('.form__btn');
-const overlay = document.createElement('div');
+const myForm = document.querySelector('.form');
+const sendBtn = document.querySelector('.form__btn');
 
-formBtn.addEventListener('click',function(e){
+
+let sendform = (e) => {
     e.preventDefault();
-    createOverlay();
-    let xhr = new XMLHttpRequest();
-
-    const data = {
-        name:form.elements.name.value,
-        phone:form.elements.phone.value,
-        comment:form.elements.comment.value
-  };
-
-    const formData = new FormData(form);
-    formData.append("name", form.elements.name.value);
-    formData.append("phone", form.elements.phone.value);
-    formData.append("comment", form.elements.comment.value);
-
-
-    function createOverlay (){
-
-        overlay.classList.add ('overlay-active');
-        
-        const overlayTemplate = document.querySelector('#overlayTemplate');
-        overlay.innerHTML = overlayTemplate.innerHTML;
-        
-        body.appendChild(overlay);
-        };
-        
-
-    function validateForm(){
-
-        if  (form.elements.name.checkValidity() && form.elements.phone.checkValidity() && form.elements.comment.checkValidity()){
-            return true;
+    if(chechVal(myForm)) {
+        const data = {
+            name: myForm.elements.name.value,
+            phone: myForm.elements.phone.value,
+            comment: myForm.elements.comment.value,
+            to: 'gfvhhhggffghh@gmail.com'
         }
-        else{
-           return false;
-        }
-    
-    }
-
-
-
-    if (validateForm()){
+        const xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-        xhr.send(form);
-        xhr.responseType = "json";
-        xhr.addEventListener('load',function(){
-            if (xhr.response.status){
-                 console.log(data);
-                 overlay.textContent = 'Успешно!';
-                 console.log('Кнопка нажата');
-            }
-            else{
-                 overlay.textContent = 'Системная ошибка/System Error';
-            }
-       })
+        xhr.send(JSON.stringify(data));
+        xhr.addEventListener('load', () => {
+            console.log(xhr.response);
+        })
+    };
+    
+}
+
+const chechVal = (form) => {
+    let valid = true;
+
+    if(!chechValFild(form.elements.name)) {
+        valid = false;
     }
-    else{
-        overlay.textContent = 'Некоторые поля заполенены не правильно введите правильно:Имя,Номер и Комментарий';
+
+    if(!chechValFild(form.elements.phone)) {
+        valid = false;
     }
-})
+
+    if(!chechValFild(form.elements.comment)) {
+        valid = false;
+    }
+
+    return valid;
+}
+
+const chechValFild = (field) => {
+    field.parentNode.nextElementSibling.textContent = field.validationMessage;
+    return field.checkValidity();
+}
 
 
 
+sendBtn.addEventListener('click', sendform);
+
+
+
+
+
+function createOverlay (){
+
+    overlay.classList.add ('overlay-active');
+    
+    const overlayTemplate = document.querySelector('#overlayTemplate');
+    overlay.innerHTML = overlayTemplate.innerHTML;
+    const overlay = document.createElement('div');
+    body.appendChild(overlay);
+    };
