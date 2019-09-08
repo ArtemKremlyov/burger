@@ -54,7 +54,8 @@ sliderComposition.addEventListener('click', function(){
 })
 sliderCross.addEventListener('click', function(){
     sliderDrop.style.display = 'none';
-    console.log('CLICK CLICK MOTHERFUCKER');
+    sliderDrop.style.left = '-10000px';
+    console.log('CLICK CLICK');
 })
 
 
@@ -183,10 +184,71 @@ reviewsCrossBlock.addEventListener('click',function(){
 
 
 })
+const form = document.querySelector('.form');
+const formBtn = document.querySelector('.form__btn');
+
+formBtn.addEventListener('click',function(e){
+    e.preventDefault();
+    createOverlay();
+    overlay.textContent = 'Не получен запрос от сервера';
+    let xhr = new XMLHttpRequest();
+
+    const data = {
+        name:form.elements.name.value,
+        phone:form.elements.phone.value,
+        comment:form.elements.comment.value
+  };
+
+    const formData = new FormData(form);
+    formData.append("name", form.elements.name.value);
+    formData.append("phone", form.elements.phone.value);
+    formData.append("comment", form.elements.comment.value);
+
+
+    function validateForm(){
+
+        if  (form.elements.name.checkValidity() && form.elements.number.checkValidity() && form.elements.comment.checkValidity()){
+            return true;
+        }
+        else{
+           return false;
+        }
+    
+    }
+
+
+
+    if (validateForm()){
+        xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
+        xhr.send(form);
+        xhr.responseType = "json";
+        xhr.addEventListener('load',function(){
+            if (xhr.response.status){
+                 console.log(data);
+                 overlay.textContent = 'Успешно!';
+                 console.log('Кнопка нажата');
+            }
+            else{
+                 overlay.textContent = 'Системная ошибка/System Error';
+            }
+       })
+    }
+    else{
+        overlay.textContent = 'Некоторые поля заполенены не правильно введите правильно:Имя,Номер и Комментарий';
+    }
+})
 
 
 
 
+function createOverlay (){
 
+const overlay = document.createElement('div');
+overlay.classList.add ('overlay-active');
 
+const overlayTemplate = document.querySelector('#overlayTemplate');
+overlay.innerHTML = overlayTemplate.innerHTML;
+
+body.appendChild(overlay);
+};
 

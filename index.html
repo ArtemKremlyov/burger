@@ -735,11 +735,11 @@
                         <div class="form__row">
                                 <label class="form__label">
                                         <div class="form__text">Имя</div>
-                                        <input type="text" name="input" class="form__input">
+                                        <input type="text" name="name" class="form__input">
                                      </label>
                                      <label class="form__label">
                                             <div class="form__text">Телефон</div>
-                                            <input type="text" name="input" class="form__input">
+                                            <input type="text" name="phone" class="form__input">
                                          </label>
                             </div>
 
@@ -773,7 +773,7 @@
                         <div class="form__row">
                                 <label class="form__label">
                                    <div class="form__text">Комментарий</div>
-                                   <textarea type="text" name="input" class="form__textarea"></textarea>
+                                   <textarea type="text" name="comment" class="form__textarea"></textarea>
                                 </label>
                             </div>
                             <div class="form__btns">
@@ -966,6 +966,12 @@
         </aside>
         </div>
     </div>
+    <script type="template" id="overlayTemplate">
+        <div class="data">
+            <button class="data-button"></button>
+            <div class="data-content"></div>
+        </div>
+    </script>
     <script src="scripts/index.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0007e342-f77e-4c6a-9f5e-6c09066ac1c5&lang=ru_RU" type="text/javascript">
     </script>

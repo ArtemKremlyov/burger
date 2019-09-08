@@ -185,3 +185,28 @@
 .input-checkbox:checked + .checkbox__content .checkbox-btn:after{
     opacity: 1;
 }
+.form__btn{
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8125rem;
+    width: 6.0625rem;
+    height: 2.1875rem;
+    border-radius: 5px;
+    background-color: #e45028;
+    text-transform: uppercase;
+    color: white;
+}
+
+.clear-btn{
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    margin-left: rem(20px);
+}
