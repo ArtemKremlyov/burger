@@ -44,14 +44,17 @@ function loop (directionButton){
 
 
 
-const sliderComposition = document.querySelector('.slider-composition');
+const sliderComposition = document.querySelectorAll('.slider-composition');
 const sliderCross = document.querySelector('.slider-cross');
 const sliderDrop = document.querySelector('.slider-drop'); 
 
-sliderComposition.addEventListener('click', function(){
-    sliderDrop.style.left = '100%';
+for (l=0;l<sliderComposition.length;l++){
+sliderComposition[l].addEventListener('click', function(){
+    sliderDrop.style.left = '20%';
     sliderDrop.style.display = 'block';
+    console.log('CLick on Composition');
 })
+}
 sliderCross.addEventListener('click', function(){
     sliderDrop.style.display = 'none';
     sliderDrop.style.left = '-10000px';

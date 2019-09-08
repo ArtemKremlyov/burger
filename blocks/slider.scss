@@ -148,15 +148,15 @@
         left: 2%;
     }
 
- //    &:hover{
-//        cursor: pointer;
- //       background-color: #e35028;
-  //      transition: 0.5s;
+     &:hover{
+        cursor: pointer;
+        background-color: #e35028;
+        transition: 0.5s;
 
- //       .slider-drop{
-//        left: 100%;
-//        }
- //    }
+       .slider-composition:hover + .slider-drop{
+        left: 20%;
+       }
+     }
 }
 .slider-elem{
     display: flex;
