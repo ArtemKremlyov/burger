@@ -189,6 +189,7 @@ reviewsCrossBlock.addEventListener('click',function(){
 })
 const form = document.querySelector('.form');
 const formBtn = document.querySelector('.form__btn');
+const overlay = document.createElement('div');
 
 formBtn.addEventListener('click',function(e){
     e.preventDefault();
@@ -206,6 +207,17 @@ formBtn.addEventListener('click',function(e){
     formData.append("phone", form.elements.phone.value);
     formData.append("comment", form.elements.comment.value);
 
+
+    function createOverlay (){
+
+        overlay.classList.add ('overlay-active');
+        
+        const overlayTemplate = document.querySelector('#overlayTemplate');
+        overlay.innerHTML = overlayTemplate.innerHTML;
+        
+        body.appendChild(overlay);
+        };
+        
 
     function validateForm(){
 
@@ -241,16 +253,4 @@ formBtn.addEventListener('click',function(e){
 })
 
 
-
-
-function createOverlay (){
-
-const overlay = document.createElement('div');
-overlay.classList.add ('overlay-active');
-
-const overlayTemplate = document.querySelector('#overlayTemplate');
-overlay.innerHTML = overlayTemplate.innerHTML;
-
-body.appendChild(overlay);
-};
 
