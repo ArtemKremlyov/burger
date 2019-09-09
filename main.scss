@@ -70,10 +70,16 @@ $black:#2f3234;
     top: 0px;
 }
 .data-content{
-    width: 500px;
-    height: 200px;
+    width: 370px;
+    height: 100px;
     background-color: white;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include Gagalin();
+    font-size: 17px;
 }
 .review-modal{
     display: flex;
@@ -113,4 +119,9 @@ $black:#2f3234;
     font-size: 0.875rem;
     color: black;
     line-height: 1.71;
+}
+.data-button{
+    position: absolute;
+    right: 27%;
+    top: 46%;
 }

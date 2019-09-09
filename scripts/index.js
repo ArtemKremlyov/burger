@@ -152,37 +152,71 @@ function createModal(){
 
 const myForm = document.querySelector('.form');
 const sendBtn = document.querySelector('.form__btn');
+const validError = console.log('УСПЕХШНО ВАЛИД');
+var dataContent = document.querySelector('.data-content');
 
 
 let sendform = (e) => {
     e.preventDefault();
     if(chechVal(myForm)) {
+        let data = new FormData(myForm);
+        data.append('name', myForm.elements.name.value);
+        console.log(data);
+        data.append('phone', myForm.elements.phone.value);
+        data.append("comment", myForm.elements.comment.value);
+        data.append("to", "frodo@gmail.com");
+        console.log(data);
         console.log('Валидация прошла успешно')
-        const data = {
-            name: myForm.elements.name.value,
-            phone: myForm.elements.phone.value,
-            comment: myForm.elements.comment.value,
-            to: 'gfvhhhggffghh@gmail.com'
-        }
+
+
         const xhr = new XMLHttpRequest();
         xhr.responseType = 'json';
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-        xhr.send(JSON.stringify(data));
+        xhr.send(data);
         xhr.addEventListener('load', () => {
-            if (xhr.response.status){
-                console.log(xhr.response);
+            if (xhr.response.status == 1){
                 console.log('Отправка данных успешна');
+                createOverlay();
+                dataContent = document.querySelector('.data-content');
+                dataContent.textContent = 'Отправка данных успешна!';
+
             }
            else{
                console.log('Неудачная отправка данных')
+               createOverlay();
+               dataContent = document.querySelector('.data-content');
+               dataContent.textContent = 'Ошибка сервера!'
            }
         })
     }
     else{
         console.log('Ошибка валидации');
+        createOverlay();
+               dataContent = document.querySelector('.data-content');
+               dataContent.textContent = 'Все/одно из полей заполнено не правильно!';
     }
     
 }
+
+
+function createOverlay (error){
+    let overlay = document.createElement('div');
+    overlay.classList.add('overlay-active');
+    const overlayTemplate = document.querySelector('#overlayTemplate');
+    overlay.innerHTML = overlayTemplate.innerHTML;
+    body.appendChild(overlay);
+    let overlayCross = document.querySelector('.data-button');
+    body.style.overflow = 'hidden';
+     
+    overlayCross.addEventListener('click',function(e){
+        e.preventDefault();
+        overlay.remove(overlay);
+        body.style.overflow = 'visible';
+    })
+     return;
+    };
+
+
 
 const chechVal = (form) => {
     let valid = true;
@@ -213,14 +247,3 @@ sendBtn.addEventListener('click', sendform);
 
 
 
-
-function createOverlay (){
-
-    overlay.classList.add ('overlay-active');
-    
-    const overlayTemplate = document.querySelector('#overlayTemplate');
-    overlay.innerHTML = overlayTemplate.innerHTML;
-    const overlay = document.createElement('div');
-    body.appendChild(overlay);
-    return;
-    };

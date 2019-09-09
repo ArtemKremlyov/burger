@@ -1566,10 +1566,18 @@ ul, li {
   top: 0px; }
 
 .data-content {
-  width: 500px;
-  height: 200px;
+  width: 370px;
+  height: 100px;
   background-color: white;
-  color: black; }
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Gagalin';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 4.5rem;
+  font-size: 17px; }
 
 .review-modal {
   display: flex;
@@ -1609,5 +1617,10 @@ ul, li {
   font-size: 0.875rem;
   color: black;
   line-height: 1.71; }
+
+.data-button {
+  position: absolute;
+  right: 27%;
+  top: 46%; }
 
 /*# sourceMappingURL=main.css.map */
