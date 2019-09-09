@@ -169,7 +169,13 @@ let sendform = (e) => {
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(JSON.stringify(data));
         xhr.addEventListener('load', () => {
-            console.log(xhr.response);
+            if (xhr.response.status){
+                console.log(xhr.response);
+                console.log('Отправка данных успешна');
+            }
+           else{
+               console.log('Неудачная отправка данных')
+           }
         })
     }
     else{
@@ -216,4 +222,5 @@ function createOverlay (){
     overlay.innerHTML = overlayTemplate.innerHTML;
     const overlay = document.createElement('div');
     body.appendChild(overlay);
+    return;
     };
