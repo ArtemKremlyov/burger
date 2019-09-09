@@ -1565,7 +1565,7 @@ ul, li {
   position: fixed;
   top: 0px; }
 
-.data-content {
+.data-block {
   width: 370px;
   height: 100px;
   background-color: white;
@@ -1573,6 +1573,7 @@ ul, li {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   font-family: 'Gagalin';
   font-weight: normal;
   font-style: normal;
@@ -1620,7 +1621,7 @@ ul, li {
 
 .data-button {
   position: absolute;
-  right: 27%;
-  top: 46%; }
+  right: 5%;
+  top: 10%; }
 
 /*# sourceMappingURL=main.css.map */
