@@ -50,16 +50,17 @@ const sliderDrop = document.querySelector('.slider-drop');
 
 for (l=0;l<sliderComposition.length;l++){
 sliderComposition[l].addEventListener('click', function(){
-    sliderDrop.style.left = '20%';
-    sliderDrop.style.display = 'block';
+    this.querySelector('.slider-drop').style.left = '100%';
     console.log('CLick on Composition');
 })
 }
-sliderCross.addEventListener('click', function(){
+for (let l = 0;l<sliderDrop.length;l++){
+sliderCross[l].addEventListener('click', function(){
     sliderDrop.style.display = 'none';
-    sliderDrop.style.left = '-10000px';
+    this.querySelector('.slider-cross').style.left = '-10000px';
     console.log('CLICK CLICK');
 })
+}
 
 
 
@@ -67,14 +68,14 @@ const accordeonTeam = document.querySelectorAll('.accordeon__item');
 const accordeonTeamActive = document.querySelectorAll('accordoen__item--active');
  
  for (let j = 0; j < accordeonTeam.length; j++) {
-    accordeonTeam[j].addEventListener('click', function() {
+   let isClick = accordeonTeam[j].addEventListener('click', function() {
         if (this.classList.contains('accordeon__item')) {
             for (let j = 0; j < accordeonTeam.length; j++) {
                accordeonTeam[j].classList.remove('accordeon__item--active');
            }
              this.classList.add('accordeon__item--active');
          }
-         if (accordeonTeamActive){
+         if (isClick && this.classList.contains('accordeon__item--active')){
             this.classList.remove('accordoen__item--active');
         }
      });
@@ -117,76 +118,38 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
   const body = document.body;
   const reviewsButton = document.querySelectorAll('.reviews__btn');
   const reviewsWindow = document.createElement('div');
-  const reviewsBlock = document.createElement('div');
-  const reviewsCrossBlock = document.createElement('button');
-  const reviewsCross = document.createElement('img');
   let headline = document.querySelector('.reviews__headline');
   let text = document.querySelector('.reviews__text');
-  let reviewsText = document.createElement('div');
-  let reviewsHeadline = document.createElement('div');
+
+
 for (n=0;n<reviewsButton.length;n++){
   reviewsButton[n].addEventListener('click', function(){
+    createModal();
     reviewsWindow.style.display= 'flex';
     event.preventDefault();
     console.log('click');
     document.body.style.overflow='hidden';
-
-body.appendChild(reviewsWindow);
-
-
-reviewsCross.src = '../img/cross.png';
-
-reviewsBlock.style.minWidth = '50%';
-reviewsBlock.style.maxWidth = '70%';
-reviewsBlock.style.background = 'white';
-
-reviewsWindow.style.display = 'flex';
-reviewsWindow.style.justifyContent = 'center';
-reviewsWindow.style.alignItems = 'center';
-reviewsWindow.style.width = '100%';
-reviewsWindow.style.height = '100%';
-reviewsWindow.style.background = 'rgba(47, 50, 52, 0.89)';
-reviewsWindow.style.position = 'fixed';
-reviewsWindow.style.top = '0';
-
-reviewsWindow.appendChild(reviewsBlock);
-reviewsBlock.appendChild(reviewsCrossBlock);
-reviewsBlock.appendChild(reviewsHeadline);
-reviewsBlock.appendChild(reviewsText);
-reviewsCrossBlock.appendChild(reviewsCross);
-
-reviewsBlock.style.borderRadius = '4px';
-reviewsBlock.style.padding = '31px';
-reviewsBlock.style.position = 'relative';
-
-reviewsCrossBlock.style.position = 'absolute';
-reviewsCrossBlock.style.top = '8%';
-reviewsCrossBlock.style.right = '5%';
-
-
-reviewsText.textContent = text.textContent;
-reviewsText.style.fontFamily = 'Ubuntu';
-reviewsText.style.fontWeight = '300';
-reviewsText.style.fontStyle = 'normal';
-reviewsText.style.fontSize = '0.875rem';
-reviewsText.style.color = 'black';
-reviewsText.style.lineHeight = '1.71';
-
-reviewsHeadline.textContent = headline.textContent;
-reviewsHeadline.style.color = 'black';
-reviewsHeadline.style.fontFamily = 'Gagalin';
-reviewsHeadline.style.marginBottom = '15px';
-reviewsHeadline.style.fontWeight = 'normal';
-reviewsHeadline.style.fontStyle = 'normal';
-reviewsHeadline.style.fontSize = '1.5rem';
+    
   }) }
 
-reviewsCrossBlock.addEventListener('click',function(){
-    reviewsWindow.remove(reviewsWindow);
-    document.body.style.overflow = 'visible'
 
+function createModal(){
+    reviewsWindow.classList.add('modal');
+    const modal = document.querySelector('#modal')
+    reviewsWindow.innerHTML = modal.innerHTML;
+    body.appendChild(reviewsWindow);
+    let modalText = document.querySelector('.review-content__text');
+    let modalHeadline = document.querySelector('.review-content__headline');
+    modalText.textContent = text.textContent;
+    modalHeadline.textContent=headline.textContent;
+    const reviewsCrossBlock = document.querySelector('.review-circle');
+    reviewsCrossBlock.addEventListener('click',function(){
+        reviewsWindow.remove(reviewsWindow);
+        document.body.style.overflow = 'visible'
+    })
+    
+}
 
-})
 const myForm = document.querySelector('.form');
 const sendBtn = document.querySelector('.form__btn');
 
@@ -194,6 +157,7 @@ const sendBtn = document.querySelector('.form__btn');
 let sendform = (e) => {
     e.preventDefault();
     if(chechVal(myForm)) {
+        console.log('Валидация прошла успешно')
         const data = {
             name: myForm.elements.name.value,
             phone: myForm.elements.phone.value,
@@ -207,7 +171,10 @@ let sendform = (e) => {
         xhr.addEventListener('load', () => {
             console.log(xhr.response);
         })
-    };
+    }
+    else{
+        console.log('Ошибка валидации');
+    }
     
 }
 
@@ -230,7 +197,6 @@ const chechVal = (form) => {
 }
 
 const chechValFild = (field) => {
-    field.parentNode.nextElementSibling.textContent = field.validationMessage;
     return field.checkValidity();
 }
 

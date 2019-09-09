@@ -75,3 +75,42 @@ $black:#2f3234;
     background-color: white;
     color: black;
 }
+.review-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(47, 50, 52, 0.89);
+    position: fixed;
+    top: 0px;
+}
+.review-content{
+    min-width: 50%;
+    max-width: 70%;
+    background: white;
+    border-radius: 4px;
+    padding: 31px;
+    position: relative;
+}
+.review-circle{
+    position: absolute;
+    top: 8%;
+    right: 5%;
+}
+.review-content__headline{
+    color: black;
+    font-family: Gagalin;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+}
+.review-content__text{
+    font-family: Ubuntu;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 0.875rem;
+    color: black;
+    line-height: 1.71;
+}
