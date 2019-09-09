@@ -70,8 +70,8 @@ $black:#2f3234;
     top: 0px;
 }
 .data-block{
-    width: 370px;
-    height: 100px;
+    max-width: 370px;
+    min-height: 100px;
     background-color: white;
     color: black;
     display: flex;

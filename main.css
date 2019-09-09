@@ -1018,6 +1018,10 @@ ul, li {
   color: white;
   line-height: 1.71;
   padding-bottom: 0.75rem; }
+  @media screen and (max-width: 480px) {
+    .reviews__text {
+      position: absolute;
+      left: -10000px; } }
 
 .reviews__btn {
   font-family: 'Ubuntu';
@@ -1050,7 +1054,8 @@ ul, li {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center; } }
+      text-align: center;
+      justify-content: center; } }
 
 .section__reviews-img:hover .reviews {
   opacity: 1;
@@ -1566,8 +1571,8 @@ ul, li {
   top: 0px; }
 
 .data-block {
-  width: 370px;
-  height: 100px;
+  max-width: 370px;
+  min-height: 100px;
   background-color: white;
   color: black;
   display: flex;
