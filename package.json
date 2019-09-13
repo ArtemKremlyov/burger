@@ -1,0 +1,29 @@
+{
+  "name": "project-burgers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "webpack": "^4.39.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtemKremlyov/artemkremlyov.github.io.git"
+  },
+  "keywords": [
+    "stenad5a"
+  ],
+  "author": "Artem Kremlyov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArtemKremlyov/artemkremlyov.github.io/issues"
+  },
+  "homepage": "https://github.com/ArtemKremlyov/artemkremlyov.github.io#readme",
+  "description": ""
+}

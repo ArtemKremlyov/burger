@@ -82,24 +82,6 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
  }
 
 
-    // Функция ymaps.ready() будет вызвана, когда
-   // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
-   ymaps.ready(init);
-   function init(){ 
-       // Создание карты.    
-       var myMap = new ymaps.Map("map", {
-           // Координаты центра карты.
-           // Порядок по умолчанию: «широта, долгота».
-           // Чтобы не определять координаты центра карты вручную,
-           // воспользуйтесь инструментом Определение координат.
-           center: [55.0415, 82.9346],
-           // Уровень масштабирования. Допустимые значения:
-           // от 0 (весь мир) до 19.
-           zoom: 12
-       });
-       myMap.behaviors.disable('scrollZoom'); }
-});
-
 
  const accordeonMenu = document.querySelectorAll('.accordeon-menu__item');
 
@@ -118,9 +100,10 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
   const body = document.body;
   const reviewsButton = document.querySelectorAll('.reviews__btn');
   const reviewsWindow = document.createElement('div');
-  let headline = document.querySelector('.reviews__headline');
-  let text = document.querySelector('.reviews__text');
 
+  const headline = document.querySelector('.reviews__headline');
+  const text = document.querySelector('.reviews__text');
+  
 
 for (n=0;n<reviewsButton.length;n++){
   reviewsButton[n].addEventListener('click', function(){
@@ -129,7 +112,6 @@ for (n=0;n<reviewsButton.length;n++){
     event.preventDefault();
     console.log('click');
     document.body.style.overflow='hidden';
-    
   }) }
 
 
@@ -138,10 +120,11 @@ function createModal(){
     const modal = document.querySelector('#modal')
     reviewsWindow.innerHTML = modal.innerHTML;
     body.appendChild(reviewsWindow);
+
     let modalText = document.querySelector('.review-content__text');
     let modalHeadline = document.querySelector('.review-content__headline');
-    modalText.textContent = text.textContent;
-    modalHeadline.textContent=headline.textContent;
+      modalText.textContent = text.textContent;
+      modalHeadline.textContent=headline.textContent;
     const reviewsCrossBlock = document.querySelector('.review-circle');
     reviewsCrossBlock.addEventListener('click',function(){
         reviewsWindow.remove(reviewsWindow);
@@ -152,8 +135,7 @@ function createModal(){
 
 const myForm = document.querySelector('.form');
 const sendBtn = document.querySelector('.form__btn');
-const validError = console.log('УСПЕХШНО ВАЛИД');
-var dataContent = document.querySelector('.data-content');
+const dataContent = document.querySelector('.data-content');
 
 
 let sendform = (e) => {
@@ -161,20 +143,18 @@ let sendform = (e) => {
     if(chechVal(myForm)) {
         let data = new FormData(myForm);
         data.append('name', myForm.elements.name.value);
-        console.log(data);
         data.append('phone', myForm.elements.phone.value);
         data.append("comment", myForm.elements.comment.value);
-        data.append("to", "frodo@gmail.com");
-        console.log(data);
+        data.append("to", "gfvhhhggffghh@gmail.com");
         console.log('Валидация прошла успешно')
 
 
         const xhr = new XMLHttpRequest();
-        xhr.responseType = 'json';
         xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
         xhr.send(data);
+        xhr.responseType = 'json';
         xhr.addEventListener('load', () => {
-            if (xhr.response.status == 1){
+            if (xhr.response.status){
                 console.log('Отправка данных успешна');
                 createOverlay();
                 dataContent = document.querySelector('.data-content');
@@ -244,6 +224,60 @@ const chechValFild = (field) => {
 
 sendBtn.addEventListener('click', sendform);
 
+ymaps.ready(function () {
+
+var myMap = new ymaps.Map('map', {
+    center: [55.0505208, 82.9152501],
+    zoom: 12
+}, {
+    searchControlProvider: 'yandex#search'
+}),
 
 
+// Создаём макет содержимого.
+MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+    '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+),
 
+myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
+    hintContent: 'Собственный значок метки',
+    balloonContent: 'Это красивая метка'
+}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#image',
+    // Своё изображение иконки метки.
+    iconImageHref: 'img/svg/map-marker.svg',
+    // Размеры метки.
+    iconImageSize: [30, 42],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-5, -38]
+}),
+
+myPlacemarkWithContent = new ymaps.Placemark([55.0280496, 82.8939897], {
+    hintContent: 'Собственный значок метки с контентом',
+    balloonContent: 'А эта — новогодняя',
+    iconContent: '12'
+}, {
+    // Опции.
+    // Необходимо указать данный тип макета.
+    iconLayout: 'default#imageWithContent',
+    // Своё изображение иконки метки.
+    iconImageHref: 'img/svg/map-marker.svg',
+    // Размеры метки.
+    iconImageSize: [48, 48],
+    // Смещение левого верхнего угла иконки относительно
+    // её "ножки" (точки привязки).
+    iconImageOffset: [-24, -24],
+    // Смещение слоя с содержимым относительно слоя с картинкой.
+    iconContentOffset: [15, 15],
+    // Макет содержимого.
+    iconContentLayout: MyIconContentLayout
+});
+myMap.behaviors.disable('scrollZoom');
+myMap.geoObjects
+.add(myPlacemark)
+.add(myPlacemarkWithContent);
+}); }
+)

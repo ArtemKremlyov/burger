@@ -1571,14 +1571,16 @@ ul, li {
   top: 0px; }
 
 .data-block {
-  max-width: 370px;
-  min-height: 100px;
+  max-width: 23.125rem;
+  min-height: 6.25rem;
   background-color: white;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  border-radius: 6px;
+  padding: 0 20px;
   font-family: 'Gagalin';
   font-weight: normal;
   font-style: normal;
