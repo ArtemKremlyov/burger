@@ -70,14 +70,16 @@ $black:#2f3234;
     top: 0px;
 }
 .data-block{
-    max-width: 370px;
-    min-height: 100px;
+    max-width: rem(370px);
+    min-height: rem(100px);
     background-color: white;
     color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    border-radius: 6px;
+    padding: 0 20px;
 
     @include Gagalin();
     font-size: 17px;
