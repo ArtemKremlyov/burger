@@ -97,6 +97,90 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
   }
 
 
+  const sections = $(".section");
+  const display = $(".sections");
+  const navigation = $('aside__elem')
+  let inscroll = false;
+
+  const countPositionPercent = sectionEq => {
+      if (inscroll === false){
+          inscroll = true;
+    const position = `${sectionEq * -100}%`;
+ 
+    sections.eq(sectionEq).addClass('active').siblings().removeClass('active');
+    navigation.eq().addClass('active').siblings().removeClass('active');
+
+    display.css({
+        transform: `translateY(${position})`
+    })
+    setTimeout(()=>{
+        inscroll = false;
+      },1000 + 300);
+    }
+  };
+
+
+  const scrollViewport = direction =>{
+      const currentSection = sections.filter('.active');
+      const nextSection = currentSection.next();
+      const prevSection = currentSection.prev();
+
+      if (direction === 'next' && nextSection.length){
+          countPositionPercent(nextSection.index())
+      }
+      if (direction === 'prev' && prevSection.length){
+          countPositionPercent(prevSection.index())
+      }
+  }
+
+  $(document).on('wheel' , e => {
+      const deltaY = e.originalEvent.deltaY;
+
+      if (deltaY>0){
+          console.log('Next section');
+          scrollViewport('next');
+      }
+      else{
+          console.log('Previous section');
+          scrollViewport('prev');
+      }
+  })
+
+  $(document).on('keydown', e => {
+      const tagName = e.target.tagName.toLowerCase();
+      const userTyping = tagName === "input" || tagName === "textarea";
+     if (userTyping == false){
+      console.log(e.keyCode);
+       switch(e.keyCode){
+          case 38: //Prev Section
+          scrollViewport('prev');
+          break;
+          case 40: //Next Section
+          scrollViewport('next');
+          break;
+      }
+    }
+  })
+   
+  $('[data-scroll-to]').on('click',e =>{
+      e.preventDefault();
+      const current = parseInt($(e.currentTarget).attr('data-scroll-to'));
+
+      countPositionPercent(current);
+  })
+
+
+    $(window).swipe( {
+      //Generic swipe handler for all directions
+      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+        alert(direction );  
+      }
+    });
+
+  
+  
+
+
   const body = document.body;
   const reviewsButton = document.querySelectorAll('.reviews__btn');
   const reviewsWindow = document.createElement('div');
@@ -249,7 +333,7 @@ myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
     // Своё изображение иконки метки.
     iconImageHref: 'img/svg/map-marker.svg',
     // Размеры метки.
-    iconImageSize: [30, 42],
+    iconImageSize: [48, 48],
     // Смещение левого верхнего угла иконки относительно
     // её "ножки" (точки привязки).
     iconImageOffset: [-5, -38]

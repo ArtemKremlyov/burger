@@ -11,7 +11,7 @@
 <body>
     <div class="wrapper">
         <div class="sections">
-        <section class="section section--main">
+        <section class="section section--main active">
             <div class="container flex--container">
         <header class="header">
             <div class="container header--container">
@@ -21,25 +21,25 @@
             <nav class="nav">
                     <ul class="nav__list">
                             <li class="nav__list-item">
-                                    <a href="#we-best" class="nav__list-link">О нас</a>
+                                    <a href data-scroll-to="1" class="nav__list-link">О нас</a>
                             </li>
                         <li class="nav__list-item">
-                            <a href="#slider" class="nav__list-link">Бургеры</a>
+                            <a href data-scroll-to="2" class="nav__list-link">Бургеры</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#team" class="nav__list-link">Команда</a>
+                                <a href data-scroll-to="3" class="nav__list-link">Команда</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#menu" class="nav__list-link">Меню</a>
+                                <a href data-scroll-to="4" class="nav__list-link">Меню</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#rev" class="nav__list-link">Отзывы</a>
+                                <a href data-scroll-to="5" class="nav__list-link">Отзывы</a>
                         </li>                            
                         <li class="nav__list-item">
-                                <a href="#how-job" class="nav__list-link">Как мы работаем</a>
+                                <a href data-scroll-to="6" class="nav__list-link">Как мы работаем</a>
                         </li>
                         <li class="nav__list-item">
-                                <a href="#contacts" class="nav__list-link">Контакты</a>
+                                <a href data-scroll-to="7" class="nav__list-link">Контакты</a>
                         </li>
                     </ul>
                     <a href="#delivery" class="nav__list-link header-btn">Заказать</a>
@@ -719,9 +719,24 @@
         <section class="section section--job" id="how-job">
             <div class="container container--job">
                 <div class="headline headline--color--black headline--job">Как мы работаем</div>
-                <div class="job-photo">
-                </div>
+                <div class="player">
+                 <div id="player"></div>
+                   <div class="toolbar">
+                       <div class="play-switch">
+                           <button class="play-btn pause">
+                               <img src="img/play.png" alt="">
+                           </button>
+                           <input type="range" class="video-duraction" id="duration" min="0" max="100">
+                       </div>
+                       <div class="volume-switch">
+                           <button class="volume-icon">
+                               <img src="img/volume.png" alt="">
+                           </button>
+                           <input type="range" class="video-duraction" id="volume" min="0" max="100">
+                       </div>
+                   </div>
             </div>
+        </div>
         </section>
 
 
@@ -988,7 +1003,10 @@
         </div>
     </script>
     <script src="scripts/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery.touchSwipe.min.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/player.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=0007e342-f77e-4c6a-9f5e-6c09066ac1c5&lang=ru_RU" type="text/javascript">
     </script>
 </body>
