@@ -27,13 +27,19 @@ list-style:none;
         border-radius: 50%;
         position: absolute;
     }
-}
+} 
 
-.aside__elem-activ::after{
-    content: '';
-    width: rem(16px);
-    height: rem(16px);
-    border: solid 1px #ffffff;
-    border-radius: 50%;
-    position: absolute;
+ .aside__item{
+      &.active{
+            .aside__elem{
+                &:after{
+                content: '';
+                width: rem(16px);
+                height: rem(16px);
+                border: solid 1px #ffffff;
+                border-radius: 50%;
+                position: absolute;
+                }
+             }
+     }
  }

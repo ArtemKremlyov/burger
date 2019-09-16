@@ -102,21 +102,37 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
   const navigation = $('aside__elem')
   let inscroll = false;
 
+  const md = new MobileDetect(window.navigator.userAgent);
+  const isMobile = md.mobile();
+
+  const switchActiveClass = (elems,elemEq) => {
+    elems.eq(elemEq).addClass('active').siblings().removeClass('active');
+  }
+
+  const countPosition = sectionEq => {
+      return `${sectionEq * -100}%`;
+  }
+
+  const unBlockScroll = () =>{
+    setTimeout(()=>{
+        inscroll = false;
+      },1000 + 300);
+  }
+
   const countPositionPercent = sectionEq => {
-      if (inscroll === false){
+      if (inscroll) return;
           inscroll = true;
-    const position = `${sectionEq * -100}%`;
- 
-    sections.eq(sectionEq).addClass('active').siblings().removeClass('active');
-    navigation.eq().addClass('active').siblings().removeClass('active');
+    const position = countPosition(sectionEq);
+    const switchAsideMenuActiveClass = () => switchActiveClass($('.aside__item'),sectionEq);
+
+
+   switchActiveClass(sections,sectionEq);
+   switchAsideMenuActiveClass()
 
     display.css({
         transform: `translateY(${position})`
     })
-    setTimeout(()=>{
-        inscroll = false;
-      },1000 + 300);
-    }
+    unBlockScroll();
   };
 
 
@@ -149,7 +165,7 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
   $(document).on('keydown', e => {
       const tagName = e.target.tagName.toLowerCase();
       const userTyping = tagName === "input" || tagName === "textarea";
-     if (userTyping == false){
+     if (userTyping) return;
       console.log(e.keyCode);
        switch(e.keyCode){
           case 38: //Prev Section
@@ -159,8 +175,9 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
           scrollViewport('next');
           break;
       }
-    }
   })
+
+
    
   $('[data-scroll-to]').on('click',e =>{
       e.preventDefault();
@@ -169,14 +186,21 @@ const accordeonTeamActive = document.querySelectorAll('accordoen__item--active')
       countPositionPercent(current);
   })
 
+ if (isMobile){
+  $('.wrapper').on('touchmove',e => e.preventDefault())
 
     $(window).swipe( {
       //Generic swipe handler for all directions
-      swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        alert(direction );  
+      swipe:function(event, direction) {
+       let scrollDirection;
+
+       if(direction === 'up') scrollDirection ='next';
+       if(direction === 'down') scrollDirection = 'prev'
+         
+       scrollViewport(scrollDirection);  
       }
     });
-
+ }
   
   
 
