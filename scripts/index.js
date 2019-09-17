@@ -20,27 +20,43 @@ const buttonLeft = document.querySelector('.arrow-scroll--left');
 const sliderList = document.querySelector('.slider-list');
 
 
-
-buttonRight.addEventListener('click',function(e){
-    e.preventDefault();
-    console.log('Right');
-    loop('buttonRight');
-})
-buttonLeft.addEventListener('click',function(e){
-    e.preventDefault();
-    console.log('Left');
-    loop('buttonLeft');
-})
-
-
-function loop (directionButton){
-    if (directionButton === 'buttonRight'){
-       sliderList.appendChild(sliderList.firstElementChild);
-    }
-    else{
-        sliderList.insertBefore(sliderList.lastElementChild, sliderList.firstElementChild);
-    }
+ 
+ const movingSliderLeft = () => {
+    $('.arrow-scroll--left').on('click',(e) =>{
+        e.preventDefault();
+        sliderList.css ({
+            transform : `translateX(100%)`
+        })
+    })
 }
+
+
+$('#slider-list').slick({
+    prevArrow:$('.arrow-scroll--left'),
+    nextArrow:$('.arrow-scroll--right')
+});
+
+
+// buttonRight.addEventListener('click',function(e){
+//    e.preventDefault();
+//   console.log('Right');
+//    loop('buttonRight');
+//})
+//buttonLeft.addEventListener('click',function(e){
+//    e.preventDefault();
+//    console.log('Left');
+//    loop('buttonLeft');
+//})
+
+
+//function loop (directionButton){
+//    if (directionButton === 'buttonRight'){
+ //      sliderList.appendChild(sliderList.firstElementChild);
+ //   }
+ //   else{
+ //       sliderList.insertBefore(sliderList.lastElementChild, sliderList.firstElementChild);
+ //   }
+//}
 
 
 

@@ -5,6 +5,7 @@
 .container--slider{
     display: flex;
     position: relative;
+    align-items:center;
 }
 .slider-list{
     width: 100%;
@@ -131,7 +132,7 @@
     border-radius: 5px;
     background-color: rgba(227, 80, 40, 0.4);
     position: absolute;
-    top: 22%;
+    top: rem(-65px);
     left: 6%;
     display: flex;
     align-items: center;
@@ -159,7 +160,7 @@
      }
 }
 .slider-elem{
-    display: flex;
+    display: flex !important;
     align-items: center;
     height: 100%;
     min-width: 100%;
@@ -240,7 +241,7 @@
 .slider-weight{
     position: absolute;
     left: 7%;
-    bottom: 25%;
+    bottom: rem(-40px);
 
      @include tablets{
          top: 0;
