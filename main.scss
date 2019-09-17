@@ -144,6 +144,16 @@ $black:#2f3234;
 }
 #player{
     position:relative;
+
+     @include tablets{
+        width: 490px;
+        height: 375px;
+     }
+     
+     @include phones{
+         width: 300px;
+         height: 300px;
+     }
 }
 .player{
     position: relative;

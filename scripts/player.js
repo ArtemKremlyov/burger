@@ -42,14 +42,23 @@ const formatTime = timeSec => {
    const onPlayerReady = (e) => {
      let interval;
      let durationSec = player.getDuration();
-
-     
-
-
      let getVolume = player.getVolume();
+     let inputValue = $('#volume').val()
 
+     $('#volume').val(player.getVolume())
+
+     $('#volume').on('change',()=>{
+      player.setVolume($('#volume').val());
+      console.log('Значение инпута = ' + inputValue);
       console.log('Текущая громкость = ' + getVolume);
-      
+    })
+
+    console.log('Значение инпута = ' + inputValue);
+
+    console.log('Текущая громкость = ' + getVolume);
+
+
+   $('#duration').val(durationSec)
 
 
      if (typeof interval !== 'undefined'){
@@ -66,12 +75,14 @@ const formatTime = timeSec => {
 
    }
 
+  
+    
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'M7lc1UVf-VE',
+        videoId: 'G1IbRujko-A',
         events: {
          'onReady': onPlayerReady,
        //   'onStateChange': onPlayerStateChange
