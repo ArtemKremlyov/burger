@@ -57,29 +57,35 @@ function svgSprite() {
       }
     }))
     .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite-svg.svg'))
+    .pipe(rename('sprites.svg'))
     .pipe(gulp.dest(paths.build + 'img/'));
 }
 
-function scripts() {
-  return gulp.src(paths.src + 'js/*.js')
-    .pipe(plumber())
-    .pipe(babel({
-      presets: ['env']
-    }))
-    .pipe(uglify())
-    .pipe(concat('script.min.js'))
-    .pipe(gulp.dest(paths.build + 'js/'))
-}
+//function scripts() {
+//  return gulp.src(paths.src + 'js/*.js')
+ //   .pipe(plumber())
+  //  .pipe(babel({
+  //    presets: ['env']
+  //  }))
+  //  .pipe(uglify())
+  ///  .pipe(concat('script.min.js'))
+ //   .pipe(gulp.dest(paths.build + 'js/'))
+//}
 
-function scriptsVendors() {
-  return gulp.src([
-      'node_modules/jquery/dist/jquery.min.js',
-      'node_modules/slick-carousel/slick/slick.min.js',
-      'node_modules/svg4everybody/dist/svg4everybody.min.js'
-    ])
-    .pipe(concat('vendors.min.js'))
-    .pipe(gulp.dest(paths.build + 'js/'))
+//function scriptsVendors() {
+ // return gulp.src([
+  //    'node_modules/jquery/dist/jquery.min.js',
+  //    'node_modules/slick-carousel/slick/slick.min.js',
+  //    'node_modules/svg4everybody/dist/svg4everybody.min.js'
+ //   ])
+ //   .pipe(concat('vendors.min.js'))
+ //   .pipe(gulp.dest(paths.build + 'js/'))
+//}
+
+function scripts() {
+  return gulp.src(paths.src + 'js/**/*.*')
+  //  .pipe(imagemin()) // если картинок будет много, то и времени будет уходить много
+    .pipe(gulp.dest(paths.build + 'js/'));
 }
 
 function htmls() {
@@ -90,9 +96,14 @@ function htmls() {
 }
 
 function images() {
-  return gulp.src(paths.src + 'img/*.{jpg,jpeg,png,gif,svg}')
-    .pipe(imagemin()) // если картинок будет много, то и времени будет уходить много
+  return gulp.src(paths.src + 'img/**/*.{jpg,jpeg,png,gif,svg}')
+  //  .pipe(imagemin()) // если картинок будет много, то и времени будет уходить много
     .pipe(gulp.dest(paths.build + 'img/'));
+}
+function fonts() {
+  return gulp.src(paths.src + 'fonts/**/*.*')
+  //  .pipe(imagemin()) // если картинок будет много, то и времени будет уходить много
+    .pipe(gulp.dest(paths.build + 'fonts/'));
 }
 
 function clean() {
@@ -100,7 +111,7 @@ function clean() {
 }
 
 function watch() {
-  gulp.watch(paths.src + 'scss/*.scss', styles);
+  gulp.watch(paths.src + 'scss/**/*.scss', styles);
   gulp.watch(paths.src + 'js/*.js', scripts);
   gulp.watch(paths.src + '*.html', htmls);
 }
@@ -116,7 +127,7 @@ function serve() {
 
 exports.styles = styles;
 exports.scripts = scripts;
-exports.scriptsVendors = scriptsVendors;
+//exports.scriptsVendors = scriptsVendors;
 exports.htmls = htmls;
 exports.images = images;
 exports.svgSprite = svgSprite;
@@ -125,11 +136,11 @@ exports.watch = watch;
 
 gulp.task('build', gulp.series(
   clean,
-  gulp.parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images)
+  gulp.parallel(styles, svgSprite, scripts, htmls, images,fonts)
 ));
 
 gulp.task('default', gulp.series(
   clean,
-  gulp.parallel(styles, svgSprite, scripts, scriptsVendors, htmls, images),
+  gulp.parallel(styles, svgSprite, scripts, htmls, images,fonts),
   gulp.parallel(watch, serve)
 ));

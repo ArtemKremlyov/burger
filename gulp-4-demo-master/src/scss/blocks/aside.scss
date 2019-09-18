@@ -1,0 +1,45 @@
+.aside__list{
+display: flex;
+flex-direction: column;
+position: fixed;
+right: rem(50px);
+top: rem(93px);
+list-style:none;
+
+  @include tablets{
+      display: none;
+  }
+}
+
+.aside__elem{
+    @include flex();
+    width: rem(6px);
+    height: rem(6px);
+    border-radius: 50%;
+    background: white;
+    margin-bottom: rem(16px);
+
+    &:hover::after{
+        content: '';
+        width: rem(16px);
+        height: rem(16px);
+        border: solid 1px #ffffff;
+        border-radius: 50%;
+        position: absolute;
+    }
+} 
+
+ .aside__item{
+      &.active{
+            .aside__elem{
+                &:after{
+                content: '';
+                width: rem(16px);
+                height: rem(16px);
+                border: solid 1px #ffffff;
+                border-radius: 50%;
+                position: absolute;
+                }
+             }
+     }
+ }

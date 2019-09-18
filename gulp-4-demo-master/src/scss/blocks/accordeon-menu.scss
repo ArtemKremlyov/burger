@@ -1,0 +1,73 @@
+.section--menu{
+    background-image: url('../img/menu-bck.png');
+    position: relative;
+}
+.accordeon-menu__list{
+    color: white;
+    display: flex;
+    height: 100%;
+}
+.accordeon-menu__btn{
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: rem(80px);
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+     @include phones{
+         width: 3rem;
+     }
+}
+.accordeon-menu__item{
+    display: flex;
+
+    &--active{
+        .accordeon-menu__content{
+            max-width: rem(500px);
+
+            @include phones{
+                max-width: 12.25rem;
+            }
+        }
+    }
+    &--active{
+        .headline--accordeon{
+            color: $orange;
+        }
+    }
+}
+.headline--accordeon{
+    font-size: rem(38px);
+    margin-bottom: rem(50px);
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+
+     @include phones{
+         font-size: rem(30px);
+     }
+}
+.accordeon-menu__content{
+    @include Ubuntu300();
+    font-size: rem(14px);
+    background-color: rgba(black, 0.5);
+    max-width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    height: 100%;
+}
+.accordeon-menu__text{
+    width: rem(500px);
+    padding: rem(60px) rem(5px) rem(0px) rem(20px);
+    
+     @include phones{
+         width: 100%;
+     }
+}
+.accordeon-menu{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    right: 0;
+}

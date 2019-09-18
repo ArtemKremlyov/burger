@@ -1,0 +1,212 @@
+.section--delivery{
+    background-image: url(../img/delivery-bck.png);
+}
+.container--delivery{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+.form__text{
+    @include Ubuntu300();
+    font-size: rem(14px);
+    line-height: 1.71;
+    color: white;
+}
+.form__column{
+    display: flex;
+    flex-direction: column;
+    margin-left: rem(20px);
+    flex: 1;
+
+     &:first-child{
+         margin: 0;
+     }
+
+     @include tablets{
+         margin: 0;
+     }
+}
+.form__input{
+    border-radius: 5px;
+    width: 100%;
+    height: rem(36px);
+
+     &:focus{
+         border: $orange 3px solid;
+         outline: none;
+     }
+}
+.form__row{
+    display: flex;
+    flex: 1;
+    margin-bottom: rem(19px);
+      
+      @include  phones{
+          margin-bottom:rem(9px);
+      }
+       
+      &:last-child{
+          margin: 0;
+
+      }
+
+      &:nth-child(3){
+          @include tablets{
+            margin-bottom: rem(20px);
+        }
+      }
+
+      .form__label{
+          &:nth-child(4){
+              @include phones{
+                  display: none;
+              }
+          }
+      }
+    
+}
+.form__label{
+    flex: 1;
+    margin-right: rem(20px);
+      
+     &:last-child{
+         margin: 0;
+     }
+
+    &:nth-child(4){
+      @include phones{
+          display: none;
+      }
+    }
+}
+.form{
+    display: flex;
+    margin-top:rem(65px);
+
+     @include tablets{
+         flex-direction: column;
+         padding: 0 15%;
+     }
+
+     @include phones{
+         padding:0 3%;
+         margin-top:rem(25px);
+     }
+}
+.form__textarea{
+    resize: none;
+    height: rem(110px);
+    flex: 1;
+    width: 100%;
+    border-radius: 5px;
+}
+.radio-label{
+    @include Ubuntu300();
+    font-size: rem(14px);
+    color: white;
+    display: flex;
+	position: relative;
+}
+.radio-input{
+    position: absolute;
+    opacity: 0;
+}
+.radio-input:checked + .radio-content .radio-btn:after{
+    opacity: 1;
+ }
+.radio-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(16px);
+    height: rem(16px);
+    border-radius: 50%;
+    background-color: #fff;
+    margin-right: rem(10px);
+    flex: 0 0 auto;
+
+     &:after{
+        content: '';
+        display: block;
+        width: rem(8px);
+        height: rem(8px);
+        background-color: $ginger;
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.2s;
+     }
+}
+.radio-content{
+    display: flex;
+    margin-right: rem(15px);
+}
+.checkbox-text{
+    @include Ubuntu300();
+    font-size: rem(14px);
+    color: white;
+    margin-left:rem(10px);
+}
+.input-checkbox{
+    width: rem(16px);
+    height: rem(16px);
+    opacity: 0;
+    position: absolute;
+}
+
+.form__btns{
+    @include phones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.checkbox-btn{
+    width: rem(16px);
+    height: rem(16px);
+    background-color: white;
+    position: relative;
+     &::after{
+         content:'';
+         position: absolute;
+         background-image: url('../img/check-mark.png');
+         width: 100%;
+         height: 100%;
+         background-repeat: no-repeat;
+         background-position:center center;
+         opacity: 0;
+         display: block;
+     }
+}
+.checkbox__content{
+   display: flex;
+}
+.input-checkbox:checked + .checkbox__content .checkbox-btn:after{
+    opacity: 1;
+}
+.form__btn{
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8125rem;
+    width: 6.0625rem;
+    height: 2.1875rem;
+    border-radius: 5px;
+    background-color: #e45028;
+    text-transform: uppercase;
+    color: white;
+}
+
+.clear-btn{
+    font-family: 'Ubuntu';
+    font-weight: 500;
+    font-style: normal;
+    color: white;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    margin-left: rem(20px);
+}

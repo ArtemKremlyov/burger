@@ -1,0 +1,133 @@
+*,*::after,*::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    }
+    
+html{
+    font-size: 16px;
+
+    @include tablets(){
+        font-size: 15px;
+    }
+    @include phones(){
+        font-size: 14px;
+    }
+}
+
+    a{
+     text-decoration: none;
+     color: white;
+    }
+    .container{
+    height: 100%;
+    width: 95%;
+    max-width: 1080px;
+    margin: 0 auto;
+    }
+    .header--container{
+        height: rem(69px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .wrapper{
+       width:100%;
+       overflow: hidden;
+    }
+    
+    body{
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow: hidden;
+    }
+    .headline{
+        @include Gagalin();
+ 
+      &--color{
+        &--black{
+            color: $black;
+        }
+        &--orange{
+            color: $orange;
+        }
+        &--white{
+            color: white;
+            margin: rem(65px);
+        }
+      }
+      &--best{
+          margin-bottom: rem(55px);
+          text-align: center;
+      }
+      &--team{
+          margin-bottom: rem(46px);
+      }
+      &--job{
+          margin-bottom:rem(50px);
+          text-align: center;
+      }
+
+       @include phones{
+           font-size: rem(55px);
+           text-align: center;
+       }
+    }
+    button{
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    background-color: transparent;
+    outline: none;
+    }
+    .section{
+        display: flex;
+        height: 100vh;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    
+    
+    .flex--container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    input{
+         &:focus{border: none;}
+    }
+
+    ul,li{
+        list-style: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #626262;;
+        cursor: pointer;
+       // margin-top: -14px; /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
+       // box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Добавляем классные эффекты для слайдера! */
+      }
+       
+      /* Тоже самое для Firefox */
+      input[type=range]::-moz-range-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #626262;;
+        cursor: pointer;
+      }
+       
+      /* Тоже самое для IE */
+      input[type=range]::-ms-thumb {
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: #626262;;
+        cursor: pointer;
+      }
