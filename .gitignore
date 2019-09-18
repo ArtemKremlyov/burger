@@ -1,6 +1,7 @@
 node_modules/
 bower_components/
 build/
+gulp-4-demo-master/
 .Saved/
 _arc/
 .vscode/
