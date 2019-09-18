@@ -259,7 +259,7 @@ function createModal(){
 
 const myForm = document.querySelector('.form');
 const sendBtn = document.querySelector('.form__btn');
-const dataContent = document.querySelector('.data-content');
+let dataContent = document.querySelector('.data-content');
 
 
 let sendform = (e) => {

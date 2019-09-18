@@ -18,6 +18,7 @@ const formatTime = timeSec => {
       player.playVideo();
       btn.removeClass('pause');
     }
+
     else{
       player.pauseVideo();
       btn.addClass('pause');
@@ -33,6 +34,7 @@ const formatTime = timeSec => {
        player.unMute();
        muteBtn.removeClass('mute');
      }
+
      else{
        player.mute();
        muteBtn.addClass('mute');
@@ -44,6 +46,15 @@ const formatTime = timeSec => {
      let durationSec = player.getDuration();
      let getVolume = player.getVolume();
      let inputValue = $('#volume').val()
+
+    updateProgress();
+
+    clearInterval(time_update_interval);
+
+  var time_update_interval = setInterval(function () {
+        updateProgress();
+    }, 100)
+
 
      $('#volume').val(player.getVolume())
 
@@ -58,31 +69,37 @@ const formatTime = timeSec => {
     console.log('Текущая громкость = ' + getVolume);
 
 
-   $('#duration').val(durationSec)
+
+
+    $('#duration').on('mouseup touchend', function (e) {
+
+      let newTime = player.getDuration() * (e.target.value / 100);
+  
+      player.seekTo(newTime);
+  
+  });
 
 
      if (typeof interval !== 'undefined'){
        clearInterval(interval);
      }
 
-      const range =  $('.video-duration');
+      const range =  $('.duration');
       console.log(range.value);
 
-     interval = setInterval(()=>{
-        const completedSec = player.getCurrentTime();
-        const completedPercent = (completedSec / durationSec)*100;
-     },1000)
 
    }
 
-  
+   const updateProgress = () =>{
+    $('#duration').val((player.getCurrentTime() / player.getDuration()) * 100);
+  }
     
 
 function onYouTubeIframeAPIReady(){
     player = new YT.Player('player', {
         height: '360',
         width: '640',
-        videoId: 'G1IbRujko-A',
+        videoId: 'zoHAfkRPQ5w',
         events: {
          'onReady': onPlayerReady,
        //   'onStateChange': onPlayerStateChange

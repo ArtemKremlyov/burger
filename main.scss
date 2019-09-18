@@ -160,12 +160,11 @@ $black:#2f3234;
 }
 .play-switch{
     width: 70%;
-    flex: 1;
     display: flex;
     align-items: center;
     
 }
-.video-duraction{
+.duration{
     -webkit-appearance: none;
     height: 4px;
     background: #626262;
