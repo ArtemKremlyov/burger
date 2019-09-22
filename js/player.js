@@ -10,7 +10,7 @@ const formatTime = timeSec => {
   return `${minutes}:${formattedSeconds}`;
 }
 
-  $('.play-btn').on('click', e => {
+    const videoControl = () => { $('.play-btn').on('click', e => {
     e.preventDefault();
     const btn = $(e.currentTarget)
 
@@ -18,15 +18,17 @@ const formatTime = timeSec => {
       player.playVideo();
       btn.removeClass('pause');
     }
-
+  
     else{
       player.pauseVideo();
       btn.addClass('pause');
     }
     console.log('Video is starting');
   })
+    }
 
-  $('.volume-icon').on('click', e =>{
+
+     $('.volume-icon').on('click', e =>{
     e.preventDefault();
     const muteBtn = $(e.currentTarget);
     console.log('Click on mute button');
@@ -41,6 +43,8 @@ const formatTime = timeSec => {
      }
   })
 
+
+
    const onPlayerReady = (e) => {
      let interval;
      let durationSec = player.getDuration();
@@ -48,12 +52,13 @@ const formatTime = timeSec => {
      let inputValue = $('#volume').val()
 
     updateProgress();
+    videoControl();
 
     clearInterval(time_update_interval);
 
   var time_update_interval = setInterval(function () {
         updateProgress();
-    }, 100)
+    }, 1000)
 
 
      $('#volume').val(player.getVolume())
@@ -71,8 +76,7 @@ const formatTime = timeSec => {
 
 
 
-    $('#duration').on('mouseup touchend', function (e) {
-
+    $('#duration').on('touchend click', function (e) {
       let newTime = player.getDuration() * (e.target.value / 100);
   
       player.seekTo(newTime);

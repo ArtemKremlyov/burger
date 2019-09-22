@@ -180,12 +180,49 @@ $black:#2f3234;
 }
 .play-btn{
     margin-left: 10px;
-}
+    display: flex;
+  
+   #onPause{
+       opacity: 1;
+       position: absolute;
+       width: 30px;
+       left: 2px;
+       bottom: 1px;
+   }
+   #onPlay{
+       opacity: 0;
+   }
+
+     &.pause{
+         #onPause{
+            opacity: 0;
+         }
+         #onPlay{
+             opacity: 1;
+         }
+     }
+    }
 .volume-icon , .play-icon{
    height: 23px;
 }
-.pausse{
-        height: 10px;
-        width: 2px;
-        background-color: #626262;
+
+.volume-icon{
+    display: flex;
+
+    #notMute{
+        opacity: 1;
+    }
+    #mute{
+        opacity: 0;
+        position: absolute;
+    }
+
+     &.mute{
+         #notMute{
+             opacity: 0;
+         }
+         #mute{
+             opacity: 1;
+         }
+     }
 }

@@ -721,13 +721,15 @@
                  <div class="toolbar">
                      <div class="play-switch">
                          <button class="play-btn pause">
-                             <img src="img/play.png" alt="">
+                             <img src="img/play.png" alt="Старт" id="onPlay">
+                             <img src='img/pause.png' alt="Пауза" id="onPause">
                          </button>
                          <input type="range" class="duration" id="duration" value="0" min="0" max="100">
                      </div>
                      <div class="volume-switch">
                          <button class="volume-icon">
-                             <img src="img/volume.png" alt="">
+                             <img src="img/volume.png" alt="Звук" id="notMute">
+                             <img src="img/volume-off.png" alt="Выключить звук" id="mute">
                          </button>
                          <input type="range" class="duration" id="volume" value="0" min="0" max="100">
                      </div>
@@ -912,22 +914,22 @@
           </button>
           <ul class="aside-menu__list">
               <li class="aside-menu__elem">
-                  <a href="#we-best" class="aside-menu__link">О нас</a>
+                  <a href data-scroll-to="1" class="aside-menu__link">О нас</a>
               </li>
               <li class="aside-menu__elem">
-                    <a href="#slider" class="aside-menu__link">Бургеры</a>
+                    <a href data-scroll-to="2" class="aside-menu__link">Бургеры</a>
                 </li>
                 <li class="aside-menu__elem">
-                        <a href="#team" class="aside-menu__link">Команда</a>
+                        <a href data-scroll-to="3" class="aside-menu__link">Команда</a>
                     </li>
                     <li class="aside-menu__elem">
-                            <a href="#menu" class="aside-menu__link">Меню</a>
+                            <a href data-scroll-to="4" class="aside-menu__link">Меню</a>
                         </li>
                         <li class="aside-menu__elem">
-                                <a href="#rev" class="aside-menu__link">Отзывы</a>
+                                <a href data-scroll-to="5" class="aside-menu__link">Отзывы</a>
                             </li>
                             <li class="aside-menu__elem">
-                                    <a href="#contacts" class="aside-menu__link">Контакты</a>
+                                    <a href data-scroll-to="6" class="aside-menu__link">Контакты</a>
                                 </li>
           </ul>
       </aside>
@@ -943,35 +945,35 @@
 
           </li>
           <li class="aside__item">
-              <a href="#we-best" class="aside__elem"></a>
+              <a href data-scroll-to="1" class="aside__elem"></a>
 
               </li>
               <li class="aside__item">
-                  <a href="#slider" class="aside__elem"></a>
+                  <a href data-scroll-to="2" class="aside__elem"></a>
 
                   </li>
                   <li class="aside__item">
-                      <a href="#team" class="aside__elem"></a>
+                      <a href data-scroll-to="3" class="aside__elem"></a>
  
                       </li>
                       <li class="aside__item">
-                          <a href="#menu" class="aside__elem"></a>
+                          <a href data-scroll-to="4" class="aside__elem"></a>
 
                           </li>
                           <li class="aside__item">
-                              <a href="#rev" class="aside__elem"></a>
+                              <a href data-scroll-to="5" class="aside__elem"></a>
 
                               </li>
                               <li class="aside__item">
-                                  <a href="#how-job" class="aside__elem"></a>
+                                  <a href data-scroll-to="6" class="aside__elem"></a>
 
                                   </li>
                                   <li class="aside__item">
-                                      <a href="#delivery" class="aside__elem"></a>
+                                      <a href data-scroll-to="7" class="aside__elem"></a>
 
                                       </li>
                                       <li class="aside__item">
-                                          <a href="#contacts" class="aside__elem"></a>
+                                          <a href data-scroll-to="8" class="aside__elem"></a>
 
                                           </li>
                                       </ul>
