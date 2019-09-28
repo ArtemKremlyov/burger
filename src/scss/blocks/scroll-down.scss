@@ -4,7 +4,7 @@
     padding-bottom: rem(45px);
 
      @include phones{
-         padding: 0;
+         padding-bottom: 2rem;
      }
 }
 .arrow-scroll__icon{
