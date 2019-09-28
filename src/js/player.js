@@ -14,10 +14,11 @@ const formatTime = timeSec => {
     e.preventDefault();
     const btn = $(e.currentTarget)
 
+
     if (btn.hasClass('pause')){
       player.playVideo();
       btn.removeClass('pause');
-    }
+        }
   
     else{
       player.pauseVideo();
@@ -26,6 +27,7 @@ const formatTime = timeSec => {
     console.log('Video is starting');
   })
     }
+
 
 
      $('.volume-icon').on('click', e =>{
@@ -53,6 +55,11 @@ const formatTime = timeSec => {
 
     updateProgress();
     videoControl();
+
+    $('#player').on('click',() =>{
+      console.log('clickedddd')
+      $('.play-btn').removeClass('pause');
+   })
 
     clearInterval(time_update_interval);
 
@@ -94,6 +101,21 @@ const formatTime = timeSec => {
 
    }
 
+
+  const onPlayerStateChange = event =>{
+    const playerBtn = $('.play-btn');
+
+    switch (event.data){
+      case 1:
+      playerBtn.removeClass('pause');
+      break;
+      case 2:
+      playerBtn.addClass('pause');
+    }
+  }
+
+
+
    const updateProgress = () =>{
     $('#duration').val((player.getCurrentTime() / player.getDuration()) * 100);
   }
@@ -106,7 +128,7 @@ function onYouTubeIframeAPIReady(){
         videoId: 'zoHAfkRPQ5w',
         events: {
          'onReady': onPlayerReady,
-       //   'onStateChange': onPlayerStateChange
+          'onStateChange': onPlayerStateChange
         },
         playerVars:{
           controls:0,

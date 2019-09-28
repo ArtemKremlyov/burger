@@ -269,7 +269,7 @@ function createModal(){
 }
 
 const myForm = document.querySelector('.form');
-const sendBtn = document.querySelector('.form__btn');
+const sendBtn = document.querySelector('.send-btn');
 let dataContent = document.querySelector('.data-content');
 
 
@@ -290,6 +290,9 @@ let sendform = (e) => {
         xhr.responseType = 'json';
         xhr.addEventListener('load', () => {
             if (xhr.response.status){
+                myForm.elements.phone.value = '';
+                myForm.elements.name.value = '';
+                myForm.elements.comment.value = '';
                 console.log('Отправка данных успешна');
                 createOverlay();
                 dataContent = document.querySelector('.data-content');
@@ -326,7 +329,6 @@ function createOverlay (error){
     overlayCross.addEventListener('click',function(e){
         e.preventDefault();
         overlay.remove(overlay);
-        body.style.overflow = 'visible';
     })
      return;
     };

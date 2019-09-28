@@ -71,6 +71,7 @@
    margin-top: rem(17px);
    margin-bottom: rem(22px);
    align-items: center;
+   transition: 0.4s;
 
     @include tablets(){
         flex-direction: column;
@@ -108,6 +109,7 @@
 }
 .accordeon__item{
  position: relative;
+ transition: 1s;
 
   @include tablets{
     display: flex;

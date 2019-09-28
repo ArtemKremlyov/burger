@@ -40,7 +40,7 @@
     display: flex;
     margin-left: rem(49px);
 }
-.header-btn{
+/*.header-btn{
     @include Ubuntu500();
     @include flex();
     font-size: rem(13px);
@@ -53,7 +53,23 @@
     &:hover{
         background-color: $orange;
         transition: 0.3s;
-    }
+    } */
+
+    .delivery-btn{
+        @include Ubuntu500();
+        @include flex();
+        font-size: rem(13px);
+        width: rem(97px);
+        height: rem(35px);
+        border-radius: 5px;
+        background-color: $ginger;
+        text-transform: uppercase;
+        color: white;
+    
+        &:hover{
+            background-color: $orange;
+            transition: 0.3s;
+        }
 
     @include tablets{
         margin-right: rem(50px);
